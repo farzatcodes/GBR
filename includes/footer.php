@@ -19,12 +19,10 @@ $logo_src = file_exists(__DIR__ . '/../assets/images/logo.png')
       <!-- Col 1: Brand + tagline -->
       <div class="lg:col-span-1">
         <a href="index.php" class="inline-block mb-5 cursor-pointer" aria-label="GBR Electrical Services — home">
-          <div class="bg-white px-2.5 py-1.5 inline-flex" style="line-height:0;">
-            <img src="<?php echo htmlspecialchars($logo_src); ?>"
-                 alt="GBR Electrical Services, LLC logo"
-                 class="h-12 w-auto object-contain" width="240" height="48"
-                 loading="lazy">
-          </div>
+          <img src="<?php echo htmlspecialchars($logo_src); ?>"
+               alt="GBR Electrical Services, LLC logo"
+               class="h-12 w-auto object-contain" width="240" height="48"
+               loading="lazy">
         </a>
         <p class="text-steel text-sm leading-relaxed mb-5">
           Licensed electrical contractor and certified Kohler home generator installer proudly serving Dover, PA and the greater York County area.

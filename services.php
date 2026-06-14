@@ -129,6 +129,15 @@ $service_sections = [
 <section class="relative bg-navy overflow-hidden dot-grid py-20 md:py-24"
          aria-label="Services page hero">
 
+  <!-- Hero background photo (place hero-services.jpg in assets/images/) -->
+  <?php if (file_exists('assets/images/hero-services.jpg')): ?>
+  <div class="absolute inset-0" aria-hidden="true">
+    <img src="assets/images/hero-services.jpg" alt=""
+         class="w-full h-full object-cover object-center" loading="eager">
+    <div class="absolute inset-0 bg-navy/80"></div>
+  </div>
+  <?php endif; ?>
+
   <div class="absolute inset-y-0 left-0 w-1 bg-power-red" aria-hidden="true"></div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">

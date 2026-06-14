@@ -24,6 +24,7 @@ require_once 'includes/header.php';
    generator.jpg         : unsplash.com/photos/white-electric-power-generator-VuR4oHZ3ucc
    electrician-wiring.jpg: unsplash.com/photos/electrician-is-working-on-electrical-wiring-Z8kjh-BlSgM
 */
+$hero_bg      = file_exists('assets/images/hero-bg.jpg')            ? 'assets/images/hero-bg.jpg'            : null;
 $img_panel    = file_exists('assets/images/electrician-panel.jpg')  ? 'assets/images/electrician-panel.jpg'  : null;
 $img_gen      = file_exists('assets/images/generator.jpg')          ? 'assets/images/generator.jpg'          : null;
 $img_wiring   = file_exists('assets/images/electrician-wiring.jpg') ? 'assets/images/electrician-wiring.jpg' : null;
@@ -34,6 +35,15 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.jpg') ? 'assets/im
      ================================================================ -->
 <section class="relative min-h-screen flex items-center overflow-hidden bg-navy dot-grid"
          aria-label="Welcome to GBR Electrical Services">
+
+  <!-- Hero background photo -->
+  <?php if ($hero_bg): ?>
+  <div class="absolute inset-0" aria-hidden="true">
+    <img src="<?php echo $hero_bg; ?>" alt=""
+         class="w-full h-full object-cover object-center" loading="eager" fetchpriority="high">
+    <div class="absolute inset-0 bg-navy/80"></div>
+  </div>
+  <?php endif; ?>
 
   <div class="absolute inset-y-0 left-0 w-1 bg-power-red" aria-hidden="true"></div>
 
@@ -54,14 +64,11 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.jpg') ? 'assets/im
                     ? 'assets/images/logo.png'
                     : 'assets/images/logo.svg';
           ?>
-          <div class="bg-white inline-block px-5 py-3 rounded-lg"
-               style="box-shadow:0 8px 40px rgba(0,0,0,.35);">
-            <img src="<?php echo htmlspecialchars($logo_src); ?>"
-                 alt="GBR Electrical Services, LLC"
-                 class="h-16 sm:h-20 w-auto object-contain"
-                 width="320" height="80"
-                 loading="eager">
-          </div>
+          <img src="<?php echo htmlspecialchars($logo_src); ?>"
+               alt="GBR Electrical Services, LLC"
+               class="h-20 sm:h-24 w-auto object-contain"
+               width="360" height="96"
+               loading="eager">
         </div>
 
         <!-- Kohler Authorized Dealer badge -->

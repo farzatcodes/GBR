@@ -270,19 +270,11 @@ $default_desc = 'GBR Electrical Services LLC – Licensed electrical contractor 
 
       <!-- ── Logo ── -->
       <a href="index.php" class="flex-shrink-0 cursor-pointer" aria-label="GBR Electrical Services, LLC — home page">
-        <!--
-          The logo PNG has a white background.
-          We place it inside a white container so it reads cleanly
-          against the dark navy header.
-        -->
-        <div class="bg-white px-2.5 py-1 inline-flex items-center justify-center"
-             style="line-height:0; min-height:52px;">
-          <img src="<?php echo htmlspecialchars($logo_src); ?>"
-               alt="GBR Electrical Services, LLC"
-               class="h-10 w-auto object-contain"
-               width="220" height="40"
-               loading="eager">
-        </div>
+        <img src="<?php echo htmlspecialchars($logo_src); ?>"
+             alt="GBR Electrical Services, LLC"
+             class="h-11 sm:h-12 w-auto object-contain"
+             width="240" height="48"
+             loading="eager">
       </a>
 
       <!-- ── Desktop nav links ── -->
