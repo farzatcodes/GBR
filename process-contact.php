@@ -163,6 +163,6 @@ if ($sent) {
 
     redirect_with(
         'error',
-        'Your message could not be delivered automatically. Please call us directly at 717-292-1338 or 717-515-1504.'
+        'Your message could not be delivered automatically. Please call us directly at 717-467-1712 or 717-515-1504.'
     );
 }

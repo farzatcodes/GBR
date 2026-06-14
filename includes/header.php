@@ -91,7 +91,7 @@ $default_desc = 'GBR Electrical Services LLC – Licensed electrical contractor 
     "name": "GBR Electrical Services, LLC",
     "image": "<?php echo $site_url; ?>/assets/images/logo.png",
     "logo": "<?php echo $site_url; ?>/assets/images/logo.png",
-    "telephone": ["717-292-1338","717-515-1504"],
+    "telephone": ["717-467-1712","717-515-1504"],
     "email": "info@lightsonpa.com",
     "address": {
       "@type": "PostalAddress",
@@ -353,7 +353,7 @@ $default_desc = 'GBR Electrical Services LLC – Licensed electrical contractor 
 
       <!-- ── Desktop call + CTA ── -->
       <div class="hidden md:flex items-center gap-3">
-        <a href="tel:7172921338"
+        <a href="tel:7174671712"
            class="flex items-center gap-2 text-silver hover:text-white transition-colors cursor-pointer group min-h-[44px]">
           <div class="w-9 h-9 bg-power-red/15 rounded-full flex items-center justify-center
                       group-hover:bg-power-red/25 transition-colors flex-shrink-0">
@@ -361,7 +361,7 @@ $default_desc = 'GBR Electrical Services LLC – Licensed electrical contractor 
           </div>
           <div class="leading-none">
             <div class="text-[10px] text-steel uppercase tracking-widest">Call Now</div>
-            <div class="font-heading text-sm text-white tracking-wide">717-292-1338</div>
+            <div class="font-heading text-sm text-white tracking-wide">717-467-1712</div>
           </div>
         </a>
         <a href="contact.php" class="btn-red text-sm py-2.5 px-5 min-h-[44px]">Request Service</a>
@@ -391,9 +391,9 @@ $default_desc = 'GBR Electrical Services LLC – Licensed electrical contractor 
         <a href="contact.php"          class="block px-4 min-h-[44px] flex items-center font-heading text-sm tracking-widest uppercase text-silver hover:text-white hover:bg-white/5 transition-all cursor-pointer">Contact</a>
       </div>
       <div class="px-4 pb-5 pt-3 border-t border-white/10 space-y-3">
-        <a href="tel:7172921338" class="flex items-center gap-3 min-h-[44px] cursor-pointer">
+        <a href="tel:7174671712" class="flex items-center gap-3 min-h-[44px] cursor-pointer">
           <i class="fas fa-phone text-power-red w-4" aria-hidden="true"></i>
-          <span class="font-heading tracking-wide text-white">717-292-1338 (Office)</span>
+          <span class="font-heading tracking-wide text-white">717-467-1712 (Office)</span>
         </a>
         <a href="tel:7175151504" class="flex items-center gap-3 min-h-[44px] cursor-pointer">
           <i class="fas fa-mobile-alt text-power-red w-4" aria-hidden="true"></i>

@@ -98,7 +98,7 @@ $logo_src = file_exists(__DIR__ . '/../assets/images/logo.png')
           </div>
           <div class="flex items-center gap-3">
             <i class="fas fa-phone text-power-red w-4 flex-shrink-0" aria-hidden="true"></i>
-            <a href="tel:7172921338" class="text-silver hover:text-white transition-colors cursor-pointer">717-292-1338 (Office)</a>
+            <a href="tel:7174671712" class="text-silver hover:text-white transition-colors cursor-pointer">717-467-1712 (Office)</a>
           </div>
           <div class="flex items-center gap-3">
             <i class="fas fa-mobile-alt text-power-red w-4 flex-shrink-0" aria-hidden="true"></i>

@@ -22,7 +22,7 @@ $schema = [
     'name'   => 'GBR Electrical Services, LLC',
     'logo'   => ['@type'=>'ImageObject','url'=>'https://lightsonpa.com/assets/images/logo.png'],
     'url'    => 'https://lightsonpa.com',
-    'telephone' => '717-292-1338',
+    'telephone' => '717-467-1712',
     'address'=> ['@type'=>'PostalAddress','streetAddress'=>'5605 Fish and Game Road','addressLocality'=>'Dover','addressRegion'=>'PA','postalCode'=>'17315'],
   ],
   'keywords' => 'power outage Dover PA, backup power York County PA, whole home generator Dover PA, generator installation PA, standby generator Central PA',
@@ -171,8 +171,8 @@ echo '<script type="application/ld+json">' . json_encode($schema, JSON_UNESCAPED
             <a href="contact.php?service=Generator+Installation+(Kohler)" class="inline-flex items-center gap-2 bg-white text-power-red font-heading text-sm uppercase tracking-widest px-6 min-h-[44px] py-3 hover:bg-silver-lt transition-colors rounded-lg cursor-pointer">
               <i class="fas fa-calendar-check" aria-hidden="true"></i> Book Free Consultation
             </a>
-            <a href="tel:7172921338" class="inline-flex items-center gap-2 border-2 border-white text-white font-heading text-sm uppercase tracking-widest px-6 min-h-[44px] py-3 hover:bg-white/10 transition-colors rounded-lg cursor-pointer">
-              <i class="fas fa-phone" aria-hidden="true"></i> 717-292-1338
+            <a href="tel:7174671712" class="inline-flex items-center gap-2 border-2 border-white text-white font-heading text-sm uppercase tracking-widest px-6 min-h-[44px] py-3 hover:bg-white/10 transition-colors rounded-lg cursor-pointer">
+              <i class="fas fa-phone" aria-hidden="true"></i> 717-467-1712
             </a>
           </div>
         </div>
@@ -190,7 +190,7 @@ echo '<script type="application/ld+json">' . json_encode($schema, JSON_UNESCAPED
                 <p class="mt-3">
                   <strong class="text-navy">GBR Electrical Services, LLC</strong><br>
                   5605 Fish and Game Road, Dover, PA 17315<br>
-                  <a href="tel:7172921338" class="text-power-red hover:underline">717-292-1338</a> (Office) &nbsp;|&nbsp;
+                  <a href="tel:7174671712" class="text-power-red hover:underline">717-467-1712</a> (Office) &nbsp;|&nbsp;
                   <a href="tel:7175151504" class="text-power-red hover:underline">717-515-1504</a> (Cell/Emergency)<br>
                   <a href="mailto:info@lightsonpa.com" class="text-power-red hover:underline">info@lightsonpa.com</a>
                 </p>
@@ -231,9 +231,9 @@ echo '<script type="application/ld+json">' . json_encode($schema, JSON_UNESCAPED
             <a href="contact.php?service=Generator+Installation+(Kohler)" class="btn-red w-full justify-center text-sm mb-3">
               <i class="fas fa-calendar-check" aria-hidden="true"></i> Free Consultation
             </a>
-            <a href="tel:7172921338"
+            <a href="tel:7174671712"
                class="flex items-center justify-center gap-2 border border-white/20 hover:border-white/40 hover:bg-white/5 transition-all text-silver font-heading text-sm tracking-widest uppercase min-h-[44px] py-3 cursor-pointer rounded-lg">
-              <i class="fas fa-phone" aria-hidden="true"></i> 717-292-1338
+              <i class="fas fa-phone" aria-hidden="true"></i> 717-467-1712
             </a>
           </div>
 
@@ -246,7 +246,7 @@ echo '<script type="application/ld+json">' . json_encode($schema, JSON_UNESCAPED
               </div>
               <div class="flex items-center gap-3">
                 <i class="fas fa-phone text-power-red flex-shrink-0 w-4" aria-hidden="true"></i>
-                <a href="tel:7172921338" class="text-power-red hover:underline font-semibold">717-292-1338</a>
+                <a href="tel:7174671712" class="text-power-red hover:underline font-semibold">717-467-1712</a>
               </div>
               <div class="flex items-center gap-3">
                 <i class="fas fa-mobile-alt text-power-red flex-shrink-0 w-4" aria-hidden="true"></i>

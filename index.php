@@ -15,7 +15,7 @@
  */
 
 $page_title       = 'Electrical Services & Kohler Generator Installation in Dover, PA';
-$meta_description = 'GBR Electrical Services LLC — licensed electrician, certified Kohler authorized dealer, and whole-home generator specialist in Dover, PA. 40 years serving York County. Military & First Responder discounts. Call 717-292-1338.';
+$meta_description = 'GBR Electrical Services LLC — licensed electrician, certified Kohler authorized dealer, and whole-home generator specialist in Dover, PA. 40 years serving York County. Military & First Responder discounts. Call 717-467-1712.';
 
 require_once 'includes/header.php';
 
@@ -94,8 +94,8 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.jpg') ? 'assets/im
           <a href="contact.php?service=Generator+Installation+(Kohler)" class="btn-red">
             <i class="fas fa-plug-circle-bolt" aria-hidden="true"></i> Get a Generator Quote
           </a>
-          <a href="tel:7172921338" class="btn-outline-white">
-            <i class="fas fa-phone" aria-hidden="true"></i> Call: 717-292-1338
+          <a href="tel:7174671712" class="btn-outline-white">
+            <i class="fas fa-phone" aria-hidden="true"></i> Call: 717-467-1712
           </a>
         </div>
 
@@ -162,11 +162,11 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.jpg') ? 'assets/im
             </ul>
 
             <!-- Phone CTA -->
-            <a href="tel:7172921338"
+            <a href="tel:7174671712"
                class="mt-7 flex items-center justify-center gap-2.5 bg-power-red hover:bg-power-red-dk
                       transition-colors min-h-[44px] px-5 py-3 font-heading text-white
                       text-sm tracking-widest uppercase cursor-pointer rounded-lg">
-              <i class="fas fa-phone" aria-hidden="true"></i> 717-292-1338
+              <i class="fas fa-phone" aria-hidden="true"></i> 717-467-1712
             </a>
           </div>
 
@@ -475,7 +475,7 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.jpg') ? 'assets/im
           <a href="contact.php?service=Generator+Installation+(Kohler)" class="btn-red">
             <i class="fas fa-plug-circle-bolt" aria-hidden="true"></i> Get a Generator Quote
           </a>
-          <a href="tel:7172921338" class="btn-outline-red">
+          <a href="tel:7174671712" class="btn-outline-red">
             <i class="fas fa-phone" aria-hidden="true"></i> Call Us Now
           </a>
         </div>
@@ -665,13 +665,13 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.jpg') ? 'assets/im
     </p>
 
     <div class="flex flex-wrap justify-center gap-5 mb-8">
-      <a href="tel:7172921338"
+      <a href="tel:7174671712"
          class="flex items-center gap-3 bg-white/10 hover:bg-white/20 border border-white/25
                 min-h-[54px] px-6 py-3 text-white transition-colors cursor-pointer rounded-lg">
         <i class="fas fa-phone text-xl" aria-hidden="true"></i>
         <div class="text-left">
           <div class="text-xs text-red-200 uppercase tracking-widest font-heading">Office</div>
-          <div class="font-heading text-xl tracking-wide">717-292-1338</div>
+          <div class="font-heading text-xl tracking-wide">717-467-1712</div>
         </div>
       </a>
       <a href="tel:7175151504"

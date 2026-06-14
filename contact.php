@@ -17,7 +17,7 @@
  */
 
 $page_title       = 'Contact Us – Free Estimate';
-$meta_description = 'Contact GBR Electrical Services LLC in Dover, PA. Request a free estimate for electrical repairs, panel upgrades, or Kohler generator installation. Call 717-292-1338 or send a message.';
+$meta_description = 'Contact GBR Electrical Services LLC in Dover, PA. Request a free estimate for electrical repairs, panel upgrades, or Kohler generator installation. Call 717-467-1712 or send a message.';
 
 $flash_status  = isset($_GET['status'])  ? $_GET['status']           : '';
 $flash_message = isset($_GET['message']) ? urldecode($_GET['message']): '';
@@ -109,7 +109,7 @@ require_once 'includes/header.php';
           <div>
             <strong class="font-heading text-red-800 uppercase tracking-wide text-sm block mb-1">Something Went Wrong</strong>
             <p class="text-red-700 text-sm">
-              <?php echo htmlspecialchars($flash_message ?: 'Your message could not be sent. Please call us at 717-292-1338.'); ?>
+              <?php echo htmlspecialchars($flash_message ?: 'Your message could not be sent. Please call us at 717-467-1712.'); ?>
             </p>
           </div>
         </div>
@@ -324,7 +324,7 @@ require_once 'includes/header.php';
               </div>
               <div>
                 <div class="font-heading text-silver text-xs tracking-widest uppercase mb-1">Office</div>
-                <a href="tel:7172921338" class="text-silver hover:text-white transition-colors font-heading text-lg tracking-wide cursor-pointer">717-292-1338</a>
+                <a href="tel:7174671712" class="text-silver hover:text-white transition-colors font-heading text-lg tracking-wide cursor-pointer">717-467-1712</a>
               </div>
             </div>
             <div class="flex items-start gap-4">
@@ -389,11 +389,11 @@ require_once 'includes/header.php';
           <i class="fas fa-phone text-white/70 text-3xl mb-3 block" aria-hidden="true"></i>
           <div class="font-heading text-white text-lg uppercase tracking-wide mb-1">Prefer to Call?</div>
           <p class="text-red-100 text-sm mb-4">Skip the form — we love talking with customers directly.</p>
-          <a href="tel:7172921338"
+          <a href="tel:7174671712"
              class="block bg-white text-power-red font-heading text-base tracking-widest
                     uppercase px-5 min-h-[44px] flex items-center justify-center
                     hover:bg-silver-lt transition-colors mb-2 cursor-pointer rounded-lg">
-            <i class="fas fa-phone mr-2" aria-hidden="true"></i> 717-292-1338
+            <i class="fas fa-phone mr-2" aria-hidden="true"></i> 717-467-1712
           </a>
           <a href="tel:7175151504"
              class="block border border-white/40 text-white font-heading text-sm tracking-widest

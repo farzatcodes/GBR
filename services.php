@@ -253,11 +253,11 @@ $service_sections = [
 
           <div class="border-t border-white/10 pt-6 space-y-3">
             <p class="text-center text-steel text-xs uppercase tracking-widest font-heading mb-3">Free Estimate</p>
-            <a href="tel:7172921338"
+            <a href="tel:7174671712"
                class="flex items-center justify-center gap-2 bg-power-red hover:bg-power-red-dk
                       transition-colors text-white font-heading text-sm tracking-widest uppercase
                       min-h-[44px] py-3 cursor-pointer rounded-lg">
-              <i class="fas fa-phone" aria-hidden="true"></i> 717-292-1338
+              <i class="fas fa-phone" aria-hidden="true"></i> 717-467-1712
             </a>
             <a href="contact.php"
                class="flex items-center justify-center gap-2 border border-white/20 hover:border-white/40
@@ -293,7 +293,7 @@ $service_sections = [
     </p>
     <div class="flex flex-wrap justify-center gap-4">
       <a href="contact.php" class="btn-red"><i class="fas fa-paper-plane" aria-hidden="true"></i> Contact Us</a>
-      <a href="tel:7172921338" class="btn-outline-white"><i class="fas fa-phone" aria-hidden="true"></i> 717-292-1338</a>
+      <a href="tel:7174671712" class="btn-outline-white"><i class="fas fa-phone" aria-hidden="true"></i> 717-467-1712</a>
     </div>
   </div>
 </section>

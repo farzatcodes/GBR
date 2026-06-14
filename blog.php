@@ -130,11 +130,11 @@ $articles = [
     </h2>
     <p class="text-silver/80 mb-8 max-w-xl mx-auto">
       GBR Electrical Services, LLC — 5605 Fish and Game Road, Dover, PA 17315<br>
-      <a href="tel:7172921338" class="text-power-red hover:text-red-400 transition-colors">717-292-1338</a>
+      <a href="tel:7174671712" class="text-power-red hover:text-red-400 transition-colors">717-467-1712</a>
     </p>
     <div class="flex flex-wrap justify-center gap-4">
       <a href="contact.php" class="btn-red"><i class="fas fa-paper-plane" aria-hidden="true"></i> Contact Us</a>
-      <a href="tel:7172921338" class="btn-outline-white"><i class="fas fa-phone" aria-hidden="true"></i> 717-292-1338</a>
+      <a href="tel:7174671712" class="btn-outline-white"><i class="fas fa-phone" aria-hidden="true"></i> 717-467-1712</a>
     </div>
   </div>
 </section>
