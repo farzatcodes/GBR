@@ -46,11 +46,11 @@ $logo_src = file_exists(__DIR__ . '/../assets/images/logo.png')
                           : null);
         if ($keystone_badge): ?>
         <a href="https://keystonebcollective.com" target="_blank" rel="noopener noreferrer"
-           class="inline-block cursor-pointer opacity-80 hover:opacity-100 transition-opacity duration-200"
+           class="inline-block cursor-pointer"
            aria-label="Member of Keystone B Collective">
           <img src="<?php echo $keystone_badge; ?>"
                alt="Member of Keystone B Collective"
-               class="h-10 w-auto object-contain"
+               class="h-10 w-auto object-contain drop-shadow-lg"
                loading="lazy">
         </a>
         <?php endif; ?>
