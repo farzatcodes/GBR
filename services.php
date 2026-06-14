@@ -50,8 +50,8 @@ $service_sections = [
     'id'      => 'generator',
     'icon'    => 'fas fa-plug-circle-bolt',
     'heading' => 'Generator Installation',
-    'sub'     => 'Certified Kohler Standby Generator Dealer &amp; Installer',
-    'intro'   => 'As a certified Kohler home generator dealer, GBR Electrical manages your complete backup power project from site assessment and load calculation through installation, transfer switch wiring, startup, and warranty registration.',
+    'sub'     => 'Kohler Authorized Dealer &amp; Whole-Home Generator Specialist',
+    'intro'   => 'As a Kohler authorized dealer and installer, GBR Electrical is York County's one-stop shop for whole-home backup power. We manage your complete project — site assessment, load calculation, permitting, installation, transfer switch wiring, startup, warranty registration, and ongoing maintenance programs.',
     'bullets' => [
       'Whole-home automatic standby generator installation',
       'Kohler 8kW–150kW generator sizing and selection',
@@ -59,7 +59,9 @@ $service_sections = [
       'Natural gas and propane fuel line coordination',
       'Generator pad and outdoor enclosure setup',
       'System commissioning, load testing, and startup',
-      'Generator maintenance and service available',
+      'Annual maintenance &amp; service programs available',
+      'Oil/filter change, load bank testing, safety inspection',
+      'Generator maintenance plans — ask us for details',
       'Portable generator interlock kits',
     ],
     'cta' => 'Request Generator Quote',
@@ -139,15 +141,18 @@ $service_sections = [
       </ol>
     </nav>
 
-    <div class="flex items-center gap-3 mb-4">
+    <div class="flex flex-wrap items-center gap-3 mb-4">
       <div class="h-px w-10 bg-power-red flex-shrink-0" aria-hidden="true"></div>
       <span class="font-heading text-power-red text-sm tracking-widest uppercase">Licensed Electrical Contractor</span>
+      <span class="inline-flex items-center gap-1.5 bg-power-red/15 border border-power-red/35 px-3 py-1 rounded-lg text-power-red font-heading text-xs tracking-widest uppercase">
+        <i class="fas fa-certificate" aria-hidden="true"></i> Kohler Authorized Dealer
+      </span>
     </div>
     <h1 class="font-heading text-white text-5xl sm:text-6xl uppercase tracking-tight mb-4">
       Our <span class="text-power-red">Electrical</span> Services
     </h1>
     <p class="text-silver/80 text-lg max-w-2xl leading-relaxed">
-      From quick repairs to full-scale generator installations — safe, code-compliant work for homes and businesses across York County, PA.
+      From quick repairs to full-scale Kohler generator installations — safe, code-compliant work for homes and businesses across York County, PA. Military &amp; First Responder discounts available.
     </p>
   </div>
 
@@ -193,7 +198,7 @@ $service_sections = [
       <!-- Content -->
       <div>
         <div class="flex items-start gap-4 mb-6">
-          <div class="w-14 h-14 bg-power-red/10 flex items-center justify-center flex-shrink-0 mt-1">
+          <div class="w-14 h-14 bg-power-red/10 flex items-center justify-center flex-shrink-0 mt-1 rounded-xl">
             <i class="<?php echo $sec['icon']; ?> text-power-red text-2xl" aria-hidden="true"></i>
           </div>
           <div>
@@ -226,11 +231,11 @@ $service_sections = [
 
       <!-- Sticky sidebar card -->
       <div class="lg:sticky lg:top-36 self-start">
-        <div class="bg-navy p-8 relative overflow-hidden">
-          <div class="absolute top-0 inset-x-0 h-1 bg-power-red" aria-hidden="true"></div>
+        <div class="bg-navy p-8 relative overflow-hidden rounded-xl">
+          <div class="absolute top-0 inset-x-0 h-1 bg-power-red rounded-t-xl" aria-hidden="true"></div>
 
           <div class="flex flex-col items-center text-center py-6">
-            <div class="w-20 h-20 bg-power-red/15 flex items-center justify-center mb-5">
+            <div class="w-20 h-20 bg-power-red/15 flex items-center justify-center mb-5 rounded-xl">
               <i class="<?php echo $sec['icon']; ?> text-power-red text-4xl" aria-hidden="true"></i>
             </div>
             <h3 class="font-heading text-white text-xl uppercase tracking-wide mb-2"><?php echo $sec['heading']; ?></h3>
@@ -270,8 +275,12 @@ $service_sections = [
     <h2 class="font-heading text-white text-4xl sm:text-5xl uppercase tracking-tight mb-4">
       Request Your Free Estimate
     </h2>
-    <p class="text-silver/80 mb-10 max-w-xl mx-auto">
+    <p class="text-silver/80 mb-4 max-w-xl mx-auto">
       No pressure, no obligation. Describe your project and we'll get back to you promptly with honest pricing.
+    </p>
+    <p class="text-silver/60 text-sm mb-10">
+      <i class="fas fa-medal text-power-red mr-1.5" aria-hidden="true"></i>
+      Military &amp; First Responder discounts available — mention it when you reach out!
     </p>
     <div class="flex flex-wrap justify-center gap-4">
       <a href="contact.php" class="btn-red"><i class="fas fa-paper-plane" aria-hidden="true"></i> Contact Us</a>

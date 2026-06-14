@@ -6,26 +6,27 @@
  *   1. Hero               — full-screen, logo prominent, two CTAs
  *   2. Trust strip        — 4 credential badges
  *   3. Services grid      — 6 service cards
- *   4. About              — owner-led, safety-first narrative + stats
- *   5. Generator spotlight — Kohler certification + features
+ *   4. About              — 40 Years serving York County, military discounts
+ *   4b. Military & First Responder discount strip
+ *   5. Generator spotlight — Kohler authorized dealer, whole-home focus
+ *   5b. Generator Maintenance Programs
  *   6. Testimonials       — 3 placeholder reviews
  *   7. Contact CTA strip  — power-red, phone numbers
- *
- * ui-ux-pro-max checklist:
- *   ✓ Hero-Centric + Trust & Authority landing pattern
- *   ✓ CTA above fold
- *   ✓ Touch targets ≥ 44px on all interactive elements
- *   ✓ Loading="lazy" on all non-hero images
- *   ✓ Semantic HTML5 (section, article, aside, address)
- *   ✓ ARIA labels and landmark roles
- *   ✓ Hover transitions 150-300ms
- *   ✓ Card hover: transform + shadow (no layout reflow)
  */
 
 $page_title       = 'Electrical Services & Kohler Generator Installation in Dover, PA';
-$meta_description = 'GBR Electrical Services LLC — licensed electrician and certified Kohler home generator installer in Dover, PA. Panel upgrades, wiring, repairs, emergency backup power. Call 717-292-1338.';
+$meta_description = 'GBR Electrical Services LLC — licensed electrician, certified Kohler authorized dealer, and whole-home generator specialist in Dover, PA. 40 years serving York County. Military & First Responder discounts. Call 717-292-1338.';
 
 require_once 'includes/header.php';
+
+/* Stock images — download these to assets/images/ from Unsplash (free):
+   electrician-panel.jpg : unsplash.com/photos/electrician-testing-electrical-panel-with-multimeter-PkHf7BUWbtk
+   generator.jpg         : unsplash.com/photos/white-electric-power-generator-VuR4oHZ3ucc
+   electrician-wiring.jpg: unsplash.com/photos/electrician-is-working-on-electrical-wiring-Z8kjh-BlSgM
+*/
+$img_panel    = file_exists('assets/images/electrician-panel.jpg')  ? 'assets/images/electrician-panel.jpg'  : null;
+$img_gen      = file_exists('assets/images/generator.jpg')          ? 'assets/images/generator.jpg'          : null;
+$img_wiring   = file_exists('assets/images/electrician-wiring.jpg') ? 'assets/images/electrician-wiring.jpg' : null;
 ?>
 
 <!-- ================================================================
@@ -34,10 +35,8 @@ require_once 'includes/header.php';
 <section class="relative min-h-screen flex items-center overflow-hidden bg-navy dot-grid"
          aria-label="Welcome to GBR Electrical Services">
 
-  <!-- Red left edge accent -->
   <div class="absolute inset-y-0 left-0 w-1 bg-power-red" aria-hidden="true"></div>
 
-  <!-- Subtle bottom-right glow -->
   <div class="absolute bottom-0 right-0 w-[700px] h-[700px] pointer-events-none opacity-[0.045]"
        style="background:radial-gradient(circle,#B31217 0%,transparent 70%);"
        aria-hidden="true"></div>
@@ -55,7 +54,7 @@ require_once 'includes/header.php';
                     ? 'assets/images/logo.png'
                     : 'assets/images/logo.svg';
           ?>
-          <div class="bg-white inline-block px-5 py-3"
+          <div class="bg-white inline-block px-5 py-3 rounded-lg"
                style="box-shadow:0 8px 40px rgba(0,0,0,.35);">
             <img src="<?php echo htmlspecialchars($logo_src); ?>"
                  alt="GBR Electrical Services, LLC"
@@ -65,31 +64,28 @@ require_once 'includes/header.php';
           </div>
         </div>
 
-        <!-- Overline -->
-        <div class="flex items-center gap-3 mb-4" aria-hidden="true">
-          <div class="h-px w-10 bg-power-red flex-shrink-0"></div>
-          <span class="font-heading text-power-red text-sm tracking-widest uppercase">
-            Licensed Contractor &amp; Certified Kohler Installer — Dover, PA
-          </span>
+        <!-- Kohler Authorized Dealer badge -->
+        <div class="inline-flex items-center gap-2.5 bg-power-red/15 border border-power-red/35 px-4 py-2 rounded-lg mb-5">
+          <i class="fas fa-certificate text-power-red" aria-hidden="true"></i>
+          <span class="font-heading text-power-red text-xs tracking-widest uppercase">Kohler Authorized Dealer &amp; Installer — Dover, PA</span>
         </div>
 
         <!-- H1 -->
         <h1 class="font-heading text-white uppercase leading-none mb-6">
-          <span class="block text-4xl sm:text-5xl xl:text-6xl tracking-tight">Reliable</span>
-          <span class="block text-5xl sm:text-6xl xl:text-7xl tracking-tight text-power-red">Electrical</span>
-          <span class="block text-4xl sm:text-5xl xl:text-6xl tracking-tight">Services &amp;</span>
-          <span class="block text-3xl sm:text-4xl xl:text-5xl tracking-tight text-silver mt-1">Generator Installation</span>
+          <span class="block text-4xl sm:text-5xl xl:text-6xl tracking-tight">Whole Home</span>
+          <span class="block text-5xl sm:text-6xl xl:text-7xl tracking-tight text-power-red">Generator</span>
+          <span class="block text-4xl sm:text-5xl xl:text-6xl tracking-tight">Installation &amp;</span>
+          <span class="block text-3xl sm:text-4xl xl:text-5xl tracking-tight text-silver mt-1">Full-Service Electrical</span>
         </h1>
 
-        <!-- Description -->
         <p class="text-silver/85 text-lg leading-relaxed mb-10 max-w-xl">
-          Professional electrical work and Kohler home generator solutions for homes and businesses in York County, PA. Owner on every job — no subcontractors.
+          York County's certified Kohler generator specialist and full-service licensed electrician. 40 years serving the community. Military &amp; First Responder discounts available.
         </p>
 
         <!-- CTA buttons -->
         <div class="flex flex-wrap gap-4 mb-10">
-          <a href="contact.php" class="btn-red">
-            <i class="fas fa-wrench" aria-hidden="true"></i> Request Service
+          <a href="contact.php?service=Generator+Installation+(Kohler)" class="btn-red">
+            <i class="fas fa-plug-circle-bolt" aria-hidden="true"></i> Get a Generator Quote
           </a>
           <a href="tel:7172921338" class="btn-outline-white">
             <i class="fas fa-phone" aria-hidden="true"></i> Call: 717-292-1338
@@ -102,9 +98,10 @@ require_once 'includes/header.php';
           <?php
           $signals = [
             'Licensed &amp; Insured',
-            'Certified Kohler Dealer',
+            'Kohler Authorized Dealer',
+            'Military &amp; First Responder Discounts',
+            '40 Years Serving York County',
             '24/7 Emergency Service',
-            'Residential &amp; Commercial',
           ];
           foreach ($signals as $s): ?>
           <div class="flex items-center gap-2 text-silver/80 text-sm">
@@ -120,15 +117,13 @@ require_once 'includes/header.php';
         <div class="relative">
 
           <!-- Main card -->
-          <div class="bg-navy-card border border-white/10 p-8 relative overflow-hidden">
+          <div class="bg-navy-card border border-white/10 p-8 relative overflow-hidden rounded-xl">
 
-            <!-- Red top bar -->
-            <div class="absolute top-0 inset-x-0 h-1 bg-power-red" aria-hidden="true"></div>
+            <div class="absolute top-0 inset-x-0 h-1 bg-power-red rounded-t-xl" aria-hidden="true"></div>
 
-            <!-- Icon -->
             <div class="relative inline-flex mb-7">
-              <div class="w-16 h-16 bg-power-red/15 flex items-center justify-center">
-                <i class="fas fa-bolt text-power-red text-3xl" aria-hidden="true"></i>
+              <div class="w-16 h-16 bg-power-red/15 flex items-center justify-center rounded-xl">
+                <i class="fas fa-plug-circle-bolt text-power-red text-3xl" aria-hidden="true"></i>
               </div>
               <div class="absolute -bottom-1.5 -right-1.5 w-7 h-7 bg-power-red flex items-center justify-center rounded-full">
                 <i class="fas fa-check text-white text-[11px]" aria-hidden="true"></i>
@@ -136,20 +131,20 @@ require_once 'includes/header.php';
             </div>
 
             <div class="mb-7">
-              <div class="font-heading text-white text-3xl uppercase tracking-wide leading-tight mb-1">24/7 Emergency</div>
-              <div class="font-heading text-power-red text-lg uppercase tracking-widest">Service Available</div>
+              <div class="font-heading text-white text-3xl uppercase tracking-wide leading-tight mb-1">Kohler Authorized</div>
+              <div class="font-heading text-power-red text-lg uppercase tracking-widest">Generator Specialist</div>
             </div>
 
             <!-- Checklist -->
             <ul class="border-t border-white/10 pt-6 space-y-3.5" role="list">
               <?php
               $checks = [
-                'Residential &amp; Commercial',
-                'Licensed &amp; Fully Insured',
-                'Certified Kohler Installer',
-                'York County, PA Experts',
+                'Kohler Authorized Dealer &amp; Installer',
+                'Whole-Home Standby Generators',
+                'Generator Maintenance Programs',
+                'Military &amp; First Responder Discounts',
+                '40 Years Serving York County',
                 'Owner on Every Job',
-                'Fast Response Times',
               ];
               foreach ($checks as $c): ?>
               <li class="flex items-center justify-between">
@@ -168,14 +163,13 @@ require_once 'includes/header.php';
             </a>
           </div>
 
-          <!-- Corner decorative frames -->
-          <div class="absolute -bottom-4 -left-4 w-32 h-32 border-2 border-power-red/20 pointer-events-none" aria-hidden="true"></div>
-          <div class="absolute -top-4 -right-4 w-16 h-16 border border-white/8 pointer-events-none"  aria-hidden="true"></div>
+          <div class="absolute -bottom-4 -left-4 w-32 h-32 border-2 border-power-red/20 pointer-events-none rounded-xl" aria-hidden="true"></div>
+          <div class="absolute -top-4 -right-4 w-16 h-16 border border-white/8 pointer-events-none rounded-lg" aria-hidden="true"></div>
         </div>
       </aside>
 
     </div>
-  </div><!-- /container -->
+  </div>
 
   <!-- Diagonal divider into white section -->
   <div class="absolute bottom-0 inset-x-0 pointer-events-none" aria-hidden="true">
@@ -197,14 +191,18 @@ require_once 'includes/header.php';
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       <?php
       $badges = [
-        ['icon'=>'fas fa-shield-halved',     'title'=>'Licensed &amp; Insured',          'desc'=>'Fully licensed PA electrical contractor with complete liability and workers&#39; compensation coverage.'],
-        ['icon'=>'fas fa-certificate',        'title'=>'Certified Kohler Installer',      'desc'=>'Factory-authorized Kohler dealer and trained home standby generator installation specialist.'],
-        ['icon'=>'fas fa-location-dot',       'title'=>'Local Electrical Experts',        'desc'=>'Based in Dover, PA — your neighbors in the trades, serving all of York County for years.'],
-        ['icon'=>'fas fa-circle-exclamation', 'title'=>'Emergency-Ready Power Solutions', 'desc'=>'24/7 emergency electrical response and automatic standby generator solutions for uninterrupted power.'],
+        ['icon'=>'fas fa-shield-halved',  'title'=>'Licensed &amp; Insured',
+         'desc'=>'Fully licensed PA electrical contractor with complete liability and workers&#39; compensation coverage.'],
+        ['icon'=>'fas fa-certificate',    'title'=>'Kohler Authorized Dealer',
+         'desc'=>'Factory-authorized Kohler dealer — one of York County&#39;s only certified Kohler whole-home generator specialists.'],
+        ['icon'=>'fas fa-medal',          'title'=>'Military &amp; First Responder Discounts',
+         'desc'=>'We proudly honor those who serve. Discounts for active military, veterans, police, fire, and EMS personnel.'],
+        ['icon'=>'fas fa-award',          'title'=>'40 Years Serving York County',
+         'desc'=>'Four decades of trusted electrical service. GBR has been a fixture in the Dover and York County community since the beginning.'],
       ];
       foreach ($badges as $b): ?>
-      <article class="border-t-4 border-power-red bg-silver-lt p-7 flex flex-col gap-4 card-lift">
-        <div class="w-14 h-14 bg-power-red/10 flex items-center justify-center flex-shrink-0">
+      <article class="border-t-4 border-power-red bg-silver-lt p-7 flex flex-col gap-4 card-lift rounded-xl">
+        <div class="w-14 h-14 bg-power-red/10 flex items-center justify-center flex-shrink-0 rounded-xl">
           <i class="<?php echo $b['icon']; ?> text-power-red text-2xl" aria-hidden="true"></i>
         </div>
         <div>
@@ -224,38 +222,36 @@ require_once 'includes/header.php';
 <section class="bg-silver-lt py-20" id="services" aria-labelledby="services-heading">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
-    <!-- Section header -->
     <div class="text-center mb-14">
       <p class="font-heading text-power-red text-sm tracking-widest uppercase mb-3">What We Do</p>
       <h2 id="services-heading" class="font-heading text-navy text-4xl sm:text-5xl uppercase tracking-tight mb-3 title-accent center">
         Our Electrical Services
       </h2>
       <p class="text-steel max-w-2xl mx-auto mt-6 text-base leading-relaxed">
-        From routine repairs to complete panel upgrades and whole-home generator installations — GBR Electrical has the expertise to keep your power running safely.
+        From routine repairs to complete panel upgrades and whole-home Kohler generator installations — GBR Electrical has the expertise to keep your power running safely.
       </p>
     </div>
 
-    <!-- Cards -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <?php
       $services = [
-        ['icon'=>'fas fa-screwdriver-wrench', 'title'=>'Electrical Repairs',         'link'=>'services.php#repairs',
+        ['icon'=>'fas fa-plug-circle-bolt',     'title'=>'Generator Installation',       'link'=>'services.php#generator',
+         'desc'=>'York County&#39;s certified Kohler authorized dealer. Whole-home standby generator installation, transfer switch, startup, and maintenance programs.'],
+        ['icon'=>'fas fa-screwdriver-wrench',   'title'=>'Electrical Repairs',           'link'=>'services.php#repairs',
          'desc'=>'Fast diagnosis and repair of outlets, switches, circuits, and wiring problems — done right the first time.'],
-        ['icon'=>'fas fa-solar-panel',         'title'=>'Panel Upgrades',             'link'=>'services.php#panel',
+        ['icon'=>'fas fa-solar-panel',           'title'=>'Panel Upgrades',               'link'=>'services.php#panel',
          'desc'=>'Upgrade outdated or undersized breaker panels (100A–400A) to handle today\'s electrical demands safely.'],
-        ['icon'=>'fas fa-plug-circle-bolt',    'title'=>'Generator Installation',     'link'=>'services.php#generator',
-         'desc'=>'Certified Kohler home standby generator installation including transfer switch, load calc, and startup.'],
-        ['icon'=>'fas fa-lightbulb',           'title'=>'Wiring &amp; Lighting',      'link'=>'services.php#wiring',
+        ['icon'=>'fas fa-lightbulb',             'title'=>'Wiring &amp; Lighting',        'link'=>'services.php#wiring',
          'desc'=>'New construction wiring, remodels, recessed LED lighting, ceiling fans, and energy-efficient upgrades.'],
-        ['icon'=>'fas fa-magnifying-glass-chart','title'=>'Troubleshooting',          'link'=>'services.php#troubleshooting',
+        ['icon'=>'fas fa-magnifying-glass-chart','title'=>'Troubleshooting',              'link'=>'services.php#troubleshooting',
          'desc'=>'Tripping breakers, flickering lights, burning smells? We find the root cause and fix it permanently.'],
-        ['icon'=>'fas fa-building',            'title'=>'Residential &amp; Commercial','link'=>'services.php#commercial',
+        ['icon'=>'fas fa-building',              'title'=>'Residential &amp; Commercial', 'link'=>'services.php#commercial',
          'desc'=>'Full-service electrical for homeowners and business owners — from single-family homes to commercial spaces.'],
       ];
       foreach ($services as $svc): ?>
-      <article class="bg-white border border-gray-200 p-8 group card-lift
+      <article class="bg-white border border-gray-200 p-8 group card-lift rounded-xl
                       hover:border-l-4 hover:border-l-power-red hover:border-power-red transition-all duration-250 cursor-default">
-        <div class="w-14 h-14 bg-silver-lt group-hover:bg-power-red/10 flex items-center justify-center mb-6 transition-colors">
+        <div class="w-14 h-14 bg-silver-lt group-hover:bg-power-red/10 flex items-center justify-center mb-6 transition-colors rounded-xl">
           <i class="<?php echo $svc['icon']; ?> text-power-red text-2xl" aria-hidden="true"></i>
         </div>
         <h3 class="font-heading text-navy text-xl uppercase tracking-wide mb-3"><?php echo $svc['title']; ?></h3>
@@ -277,40 +273,57 @@ require_once 'includes/header.php';
 
 
 <!-- ================================================================
-     4. ABOUT — dark navy, owner story + credential grid
+     4. ABOUT — dark navy, 40 years serving the community
      ================================================================ -->
 <section class="bg-navy py-20 relative overflow-hidden dot-grid" id="about" aria-labelledby="about-heading">
 
-  <!-- Subtle red left glow -->
   <div class="absolute -left-40 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full opacity-[0.06] pointer-events-none"
        style="background:radial-gradient(circle,#B31217 0%,transparent 70%);" aria-hidden="true"></div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-    <div class="grid lg:grid-cols-2 gap-14 items-center">
+
+    <!-- Milestone stats row -->
+    <div class="flex flex-wrap items-center justify-center gap-10 mb-16 pb-14 border-b border-white/10">
+      <?php
+      $milestone_stats = [
+        ['val'=>'40+',    'label'=>'Years Serving the Community'],
+        ['val'=>'Kohler', 'label'=>'Authorized Dealer'],
+        ['val'=>'24/7',   'label'=>'Emergency Available'],
+        ['val'=>'York Co.','label'=>'PA — Licensed &amp; Insured'],
+      ];
+      foreach ($milestone_stats as $ms): ?>
+      <div class="text-center">
+        <div class="font-heading text-power-red text-4xl sm:text-5xl uppercase tracking-tight"><?php echo $ms['val']; ?></div>
+        <div class="text-steel text-xs uppercase tracking-widest mt-1 font-heading"><?php echo $ms['label']; ?></div>
+      </div>
+      <?php endforeach; ?>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-14 items-start">
 
       <!-- Left: Story -->
       <div>
         <p class="font-heading text-power-red text-sm tracking-widest uppercase mb-3">Who We Are</p>
         <h2 id="about-heading" class="font-heading text-white text-4xl sm:text-5xl uppercase tracking-tight mb-6 title-accent">
-          Owner-Led.<br>Safety-First.<br>Local Experts.
+          Serving the Community<br>for 40 Years.
         </h2>
         <div class="space-y-4 text-silver/80 leading-relaxed text-base">
-          <p>GBR Electrical Services is a locally owned and operated electrical contracting company based in Dover, PA. Our owner is hands-on with every project — when you call GBR, you get a licensed electrician, not a salesperson or subcontractor.</p>
-          <p>We built our reputation on honest, safety-first electrical work for homeowners and businesses across York County. Whether it's a simple repair or a complex whole-home generator installation, we treat your property with the same care we'd give our own.</p>
-          <p>As a certified Kohler dealer, we provide complete backup power solutions from initial consultation to installation, startup, and ongoing maintenance.</p>
+          <p>GBR Electrical Services is a locally owned and operated electrical contracting company based in Dover, PA. For over 40 years, we've built our reputation one job at a time — through honest work, fair pricing, and treating every customer like a neighbor.</p>
+          <p>Our owner is hands-on with every project. When you call GBR, you get a licensed electrician, not a salesperson or subcontractor. We bring four decades of experience to repairs, panel upgrades, and our specialty — Kohler whole-home generator installations.</p>
+          <p>We're proud to offer discounts to military members, veterans, police officers, firefighters, and EMS personnel. It's a small way we give back to those who give so much to our community.</p>
         </div>
-        <!-- Value bullets -->
         <ul class="mt-8 space-y-3 text-sm" role="list">
           <?php
           $values = [
             'Owner on every job — no subcontractors',
             'Code-compliant work, every time',
+            'Military &amp; First Responder discounts available',
             'Transparent pricing before work begins',
-            'Clean, respectful service in your home',
+            'Clean, respectful service in your home or business',
           ];
           foreach ($values as $v): ?>
           <li class="flex items-center gap-3 text-silver">
-            <span class="w-5 h-5 bg-power-red flex items-center justify-center flex-shrink-0" aria-hidden="true">
+            <span class="w-5 h-5 bg-power-red flex items-center justify-center flex-shrink-0 rounded" aria-hidden="true">
               <i class="fas fa-check text-white text-[10px]"></i>
             </span>
             <?php echo $v; ?>
@@ -322,44 +335,95 @@ require_once 'includes/header.php';
         </a>
       </div>
 
-      <!-- Right: Credential blocks -->
-      <div class="grid grid-cols-2 gap-4" role="list" aria-label="Credentials and service highlights">
-        <?php
-        $creds = [
-          ['v'=>'Licensed',  'l'=>'PA Electrician',         'i'=>'fas fa-id-card'],
-          ['v'=>'Insured',   'l'=>'Full Coverage',           'i'=>'fas fa-shield-halved'],
-          ['v'=>'Kohler',    'l'=>'Certified Dealer',        'i'=>'fas fa-certificate'],
-          ['v'=>'24/7',      'l'=>'Emergency Response',      'i'=>'fas fa-circle-exclamation'],
-          ['v'=>'York Co.',  'l'=>'Locally Based in PA',     'i'=>'fas fa-location-dot'],
-          ['v'=>'Honest',    'l'=>'Upfront Pricing',         'i'=>'fas fa-handshake'],
-        ];
-        foreach ($creds as $c): ?>
-        <div class="bg-navy-card border border-white/10 p-6 group hover:border-power-red/40
-                    transition-colors card-lift cursor-default" role="listitem">
-          <i class="<?php echo $c['i']; ?> text-power-red text-xl mb-3 block" aria-hidden="true"></i>
-          <div class="font-heading text-white text-2xl uppercase tracking-wide mb-1"><?php echo $c['v']; ?></div>
-          <div class="text-steel text-xs uppercase tracking-widest"><?php echo $c['l']; ?></div>
-        </div>
-        <?php endforeach; ?>
-      </div>
+      <!-- Right: Photo + Credential blocks -->
+      <div class="space-y-5">
 
+        <!-- Electrician image -->
+        <?php if ($img_panel): ?>
+        <div class="relative overflow-hidden rounded-xl">
+          <img src="<?php echo $img_panel; ?>"
+               alt="GBR Electrical Services — licensed electrician at work on an electrical panel"
+               class="w-full h-64 object-cover"
+               loading="lazy" width="600" height="256">
+          <div class="absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent rounded-xl"></div>
+          <div class="absolute bottom-4 left-5 right-5">
+            <div class="font-heading text-white text-lg uppercase tracking-wide">Licensed Professionals</div>
+            <div class="text-silver/80 text-xs">York County, PA — 40 Years in Business</div>
+          </div>
+        </div>
+        <?php else: ?>
+        <div class="relative overflow-hidden rounded-xl bg-navy-card border border-white/10 h-64 flex items-center justify-center">
+          <div class="text-center">
+            <i class="fas fa-bolt text-power-red text-4xl mb-3 block" aria-hidden="true"></i>
+            <div class="font-heading text-white text-xl uppercase tracking-wide">Licensed Professionals</div>
+            <div class="text-steel text-sm mt-1">York County, PA — 40 Years in Business</div>
+          </div>
+        </div>
+        <?php endif; ?>
+
+        <!-- Credential blocks -->
+        <div class="grid grid-cols-2 gap-4" role="list" aria-label="Credentials and highlights">
+          <?php
+          $creds = [
+            ['v'=>'40+',      'l'=>'Years in Business',              'i'=>'fas fa-award'],
+            ['v'=>'Kohler',   'l'=>'Authorized Dealer',              'i'=>'fas fa-certificate'],
+            ['v'=>'Military', 'l'=>'&amp; First Responder Discounts','i'=>'fas fa-medal'],
+            ['v'=>'24/7',     'l'=>'Emergency Response',             'i'=>'fas fa-circle-exclamation'],
+          ];
+          foreach ($creds as $c): ?>
+          <div class="bg-navy-card border border-white/10 p-6 group hover:border-power-red/40
+                      transition-colors card-lift cursor-default rounded-xl" role="listitem">
+            <i class="<?php echo $c['i']; ?> text-power-red text-xl mb-3 block" aria-hidden="true"></i>
+            <div class="font-heading text-white text-2xl uppercase tracking-wide mb-1"><?php echo $c['v']; ?></div>
+            <div class="text-steel text-xs uppercase tracking-widest"><?php echo $c['l']; ?></div>
+          </div>
+          <?php endforeach; ?>
+        </div>
+
+      </div>
     </div>
   </div>
 </section>
 
 
 <!-- ================================================================
-     5. GENERATOR SPOTLIGHT — Kohler certification focus
+     4b. MILITARY & FIRST RESPONDER DISCOUNT STRIP
+     ================================================================ -->
+<section class="bg-navy-mid py-10 border-y border-white/5" aria-label="Military and first responder discount">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-5">
+        <div class="w-16 h-16 bg-power-red/15 flex items-center justify-center rounded-xl flex-shrink-0">
+          <i class="fas fa-medal text-power-red text-3xl" aria-hidden="true"></i>
+        </div>
+        <div>
+          <div class="font-heading text-white text-2xl sm:text-3xl uppercase tracking-tight">Military &amp; First Responder Discounts</div>
+          <p class="text-steel text-sm mt-1">We proudly honor those who serve. Discounts for active military, veterans, police, fire, and EMS personnel. Just ask!</p>
+        </div>
+      </div>
+      <a href="contact.php?discount=military" class="btn-outline-white flex-shrink-0">
+        <i class="fas fa-tag" aria-hidden="true"></i> Ask About Discounts
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     5. GENERATOR SPOTLIGHT — Kohler authorized dealer, whole-home focus
      ================================================================ -->
 <section class="bg-white py-20" id="generators" aria-labelledby="gen-heading">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
-    <!-- Certified badge -->
+    <!-- Kohler Authorized Dealer banner -->
     <div class="flex justify-center mb-12">
-      <div class="inline-flex items-center gap-3 bg-power-red/8 border border-power-red/25 px-6 py-3.5"
-           role="banner" aria-label="Kohler Certification">
-        <i class="fas fa-certificate text-power-red text-lg" aria-hidden="true"></i>
-        <span class="font-heading text-power-red text-sm tracking-widest uppercase">Certified Kohler Home Generator Dealer &amp; Installer</span>
+      <div class="inline-flex items-center gap-4 bg-navy px-8 py-5 rounded-xl"
+           role="banner" aria-label="Kohler Authorized Dealer">
+        <i class="fas fa-certificate text-power-red text-2xl" aria-hidden="true"></i>
+        <div>
+          <div class="font-heading text-power-red text-xs tracking-widest uppercase">Kohler Authorized Dealer &amp; Installer</div>
+          <div class="font-heading text-white text-lg uppercase tracking-wide">York County's Kohler Generator Specialist</div>
+        </div>
       </div>
     </div>
 
@@ -367,29 +431,28 @@ require_once 'includes/header.php';
 
       <!-- Left: Content -->
       <div>
-        <p class="font-heading text-power-red text-sm tracking-widest uppercase mb-3">Backup Power Solutions</p>
+        <p class="font-heading text-power-red text-sm tracking-widest uppercase mb-3">Our #1 Specialty</p>
         <h2 id="gen-heading" class="font-heading text-navy text-4xl sm:text-5xl uppercase tracking-tight mb-6 title-accent">
           Never Lose Power<br>Again.
         </h2>
         <p class="text-gray-600 leading-relaxed mb-6 text-base">
-          As a certified Kohler dealer and installer, GBR Electrical designs and installs automatic home standby generators that keep your lights on, your HVAC running, and your family safe — even when the grid goes down.
+          As a Kohler authorized dealer and installer, GBR Electrical is your one-stop shop for whole-home backup power. We handle everything — site assessment, load calculation, permitting, installation, transfer switch wiring, startup, and warranty registration.
         </p>
         <p class="text-gray-600 leading-relaxed mb-8 text-base">
-          Kohler generators start automatically within seconds of a power outage. No manual setup. No extension cords. Just seamless, whole-home backup power through storms, grid failures, and everything in between.
+          Kohler standby generators start automatically within seconds of a power outage. No manual setup. No extension cords. Just seamless, whole-home backup power through storms, grid failures, and everything in between.
         </p>
 
-        <!-- Feature list -->
         <div class="space-y-5 mb-8">
           <?php
           $gen_features = [
-            ['i'=>'fas fa-bolt',           't'=>'Automatic Standby Power',   'd'=>'Detects outages and starts within 10 seconds — fully automatic, no manual intervention.'],
-            ['i'=>'fas fa-house-chimney',  't'=>'Whole-Home Protection',     'd'=>'Powers your entire home including HVAC, refrigerators, sump pump, and medical equipment.'],
-            ['i'=>'fas fa-cloud-bolt',     't'=>'Storm Protection',           'd'=>'Engineered for extended outages from severe weather — keeps running as long as needed.'],
-            ['i'=>'fas fa-rotate',         't'=>'Weekly Self-Test',           'd'=>'Runs an automatic weekly self-test so it\'s always ready when you actually need it.'],
+            ['i'=>'fas fa-bolt',          't'=>'Automatic Standby Power',       'd'=>'Detects outages and starts within 10 seconds — fully automatic, no manual intervention needed.'],
+            ['i'=>'fas fa-house-chimney', 't'=>'Whole-Home Protection',         'd'=>'Powers your entire home including HVAC, refrigerators, sump pump, and medical equipment.'],
+            ['i'=>'fas fa-clipboard-list','t'=>'Complete Project Management',    'd'=>'From permit to startup — we manage the full project including gas line coordination and utility interconnect.'],
+            ['i'=>'fas fa-wrench',        't'=>'Maintenance &amp; Service Plans','d'=>'Ask about our generator maintenance programs to keep your unit running reliably for years to come.'],
           ];
           foreach ($gen_features as $gf): ?>
           <div class="flex gap-4">
-            <div class="w-10 h-10 bg-power-red/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <div class="w-10 h-10 bg-power-red/10 flex items-center justify-center flex-shrink-0 mt-0.5 rounded-lg">
               <i class="<?php echo $gf['i']; ?> text-power-red" aria-hidden="true"></i>
             </div>
             <div>
@@ -410,12 +473,27 @@ require_once 'includes/header.php';
         </div>
       </div>
 
-      <!-- Right: Advantages card + urgency card -->
+      <!-- Right: Image + advantage cards -->
       <div class="space-y-5">
 
+        <!-- Generator image -->
+        <?php if ($img_gen): ?>
+        <div class="relative overflow-hidden rounded-xl">
+          <img src="<?php echo $img_gen; ?>"
+               alt="Kohler whole-home standby generator installed by GBR Electrical Services"
+               class="w-full h-56 object-cover"
+               loading="lazy" width="600" height="224">
+          <div class="absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent rounded-xl"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-5">
+            <div class="font-heading text-white text-sm uppercase tracking-widest">Kohler Standby Generator</div>
+            <div class="text-silver/80 text-xs">Professionally Installed by GBR Electrical, York County PA</div>
+          </div>
+        </div>
+        <?php endif; ?>
+
         <!-- Kohler advantages card -->
-        <div class="bg-navy p-8 relative overflow-hidden">
-          <div class="absolute top-0 inset-x-0 h-1 bg-power-red" aria-hidden="true"></div>
+        <div class="bg-navy p-8 relative overflow-hidden rounded-xl">
+          <div class="absolute top-0 inset-x-0 h-1 bg-power-red rounded-t-xl" aria-hidden="true"></div>
           <h3 class="font-heading text-white text-2xl uppercase tracking-wide mb-6">Kohler Advantages</h3>
           <ul class="space-y-3.5" role="list">
             <?php
@@ -438,7 +516,7 @@ require_once 'includes/header.php';
         </div>
 
         <!-- Urgency card -->
-        <div class="bg-power-red p-7 flex items-start gap-5">
+        <div class="bg-power-red p-7 flex items-start gap-5 rounded-xl">
           <i class="fas fa-triangle-exclamation text-white/75 text-3xl flex-shrink-0 mt-1" aria-hidden="true"></i>
           <div>
             <div class="font-heading text-white text-xl uppercase tracking-wide mb-2">Don't Wait for the Next Outage</div>
@@ -449,7 +527,7 @@ require_once 'includes/header.php';
                class="inline-flex items-center gap-2 bg-white text-power-red font-heading text-sm
                       uppercase tracking-widest px-5 min-h-[44px] py-2.5 hover:bg-silver-lt
                       transition-colors cursor-pointer rounded-lg">
-              Schedule Consultation
+              <i class="fas fa-calendar-check" aria-hidden="true"></i> Schedule Consultation
             </a>
           </div>
         </div>
@@ -461,9 +539,65 @@ require_once 'includes/header.php';
 
 
 <!-- ================================================================
+     5b. GENERATOR MAINTENANCE & SERVICE PROGRAMS
+     ================================================================ -->
+<section class="bg-silver-lt py-16" aria-labelledby="maint-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+
+    <div class="text-center mb-12">
+      <p class="font-heading text-power-red text-sm tracking-widest uppercase mb-3">Protect Your Investment</p>
+      <h2 id="maint-heading" class="font-heading text-navy text-3xl sm:text-4xl uppercase tracking-tight title-accent center">
+        Generator Maintenance &amp; Service Programs
+      </h2>
+      <p class="text-steel max-w-2xl mx-auto mt-6 text-base leading-relaxed">
+        GBR Electrical offers annual maintenance programs to keep your Kohler generator performing reliably year after year. Don't wait for a problem — schedule routine service and ensure it's ready when you need it most.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+      <?php
+      $maint_items = [
+        ['i'=>'fas fa-oil-can',           't'=>'Annual Tune-Up',
+         'd'=>'Oil and filter change, spark plug inspection, air filter service, battery test, and cooling system check.'],
+        ['i'=>'fas fa-rotate',            't'=>'Load Bank Testing',
+         'd'=>'Full load test to verify your generator can handle the power demands of your home when the grid goes down.'],
+        ['i'=>'fas fa-clipboard-check',   't'=>'Full Safety Inspection',
+         'd'=>'Transfer switch inspection, fuel system check, controls calibration, and complete diagnostic report.'],
+      ];
+      foreach ($maint_items as $mi): ?>
+      <div class="bg-white border border-gray-200 p-8 rounded-xl card-lift text-center">
+        <div class="w-14 h-14 bg-power-red/10 flex items-center justify-center rounded-full mx-auto mb-5">
+          <i class="<?php echo $mi['i']; ?> text-power-red text-2xl" aria-hidden="true"></i>
+        </div>
+        <h3 class="font-heading text-navy text-xl uppercase tracking-wide mb-3"><?php echo $mi['t']; ?></h3>
+        <p class="text-steel text-sm leading-relaxed"><?php echo $mi['d']; ?></p>
+      </div>
+      <?php endforeach; ?>
+    </div>
+
+    <div class="bg-navy p-8 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 bg-power-red/15 flex items-center justify-center rounded-xl flex-shrink-0">
+          <i class="fas fa-shield-halved text-power-red text-xl" aria-hidden="true"></i>
+        </div>
+        <div>
+          <div class="font-heading text-white text-xl uppercase tracking-wide">Annual Maintenance Program</div>
+          <p class="text-steel text-sm">Keep your Kohler generator covered year-round. Ask us about scheduled service plans.</p>
+        </div>
+      </div>
+      <a href="contact.php?service=Generator+Maintenance" class="btn-red flex-shrink-0">
+        <i class="fas fa-calendar-check" aria-hidden="true"></i> Schedule Maintenance
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================================================================
      6. TESTIMONIALS — 3 reviews on light silver background
      ================================================================ -->
-<section class="bg-silver-lt py-20" id="testimonials" aria-labelledby="test-heading">
+<section class="bg-white py-20" id="testimonials" aria-labelledby="test-heading">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
     <div class="text-center mb-14">
@@ -476,27 +610,23 @@ require_once 'includes/header.php';
     <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
       <?php
       $reviews = [
-        ['name'=>'Mike R.', 'loc'=>'Dover, PA',                    'stars'=>5,
-         'text'=>'GBR installed our Kohler whole-home generator and the experience was top-notch from start to finish. Showed up on time, explained everything clearly, and the work was impeccably clean. Highly recommend to anyone looking for a reliable generator installer.'],
-        ['name'=>'Sarah T.', 'loc'=>'York, PA',                    'stars'=>5,
+        ['name'=>'Mike R.',   'loc'=>'Dover, PA',               'stars'=>5,
+         'text'=>'GBR installed our Kohler whole-home generator and the experience was top-notch from start to finish. Showed up on time, explained everything clearly, and the work was impeccably clean. Highly recommend to anyone in York County looking for a reliable generator installer.'],
+        ['name'=>'Sarah T.',  'loc'=>'York, PA',                'stars'=>5,
          'text'=>'Had our electrical panel upgraded and new circuits run for a home addition. Fair price, excellent craftsmanship. The owner himself was on the job every day — that level of personal attention is rare and means everything to us.'],
-        ['name'=>'Dave L.', 'loc'=>'Springettsbury Twp, PA',       'stars'=>5,
+        ['name'=>'Dave L.',   'loc'=>'Springettsbury Twp, PA',  'stars'=>5,
          'text'=>'Called about nuisance tripping breakers and they were out the next morning. Diagnosed the issue quickly, gave an honest quote, and had it fixed the same day. Trustworthy, knowledgeable, and no upsell games. Will absolutely use again.'],
       ];
       foreach ($reviews as $r): ?>
-      <blockquote class="bg-white border border-gray-200 p-8 flex flex-col card-lift">
-        <!-- Stars -->
+      <blockquote class="bg-silver-lt border border-gray-200 p-8 flex flex-col card-lift rounded-xl">
         <div class="flex gap-1 mb-4" aria-label="<?php echo $r['stars']; ?> out of 5 stars">
           <?php for ($i = 0; $i < $r['stars']; $i++): ?>
           <i class="fas fa-star text-yellow-400 text-sm" aria-hidden="true"></i>
           <?php endfor; ?>
         </div>
-        <!-- Quote mark -->
         <i class="fas fa-quote-left text-power-red/20 text-4xl mb-3 -mt-1" aria-hidden="true"></i>
-        <!-- Review -->
         <p class="text-gray-600 text-sm leading-relaxed flex-1 mb-6"><?php echo $r['text']; ?></p>
-        <!-- Attribution -->
-        <footer class="flex items-center gap-3 border-t border-gray-100 pt-5">
+        <footer class="flex items-center gap-3 border-t border-gray-200 pt-5">
           <div class="w-10 h-10 bg-navy flex items-center justify-center rounded-full flex-shrink-0">
             <i class="fas fa-user text-silver text-sm" aria-hidden="true"></i>
           </div>
@@ -523,10 +653,9 @@ require_once 'includes/header.php';
       Ready to Get Started?
     </h2>
     <p class="text-red-100 text-lg mb-10 max-w-xl mx-auto">
-      Call or send us a message today for a free, no-obligation estimate.
+      Call or send us a message today for a free, no-obligation estimate. Military &amp; First Responder discounts available — just ask!
     </p>
 
-    <!-- Phone numbers -->
     <div class="flex flex-wrap justify-center gap-5 mb-8">
       <a href="tel:7172921338"
          class="flex items-center gap-3 bg-white/10 hover:bg-white/20 border border-white/25
