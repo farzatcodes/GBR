@@ -27,7 +27,7 @@ $logo_src = file_exists(__DIR__ . '/../assets/images/logo.png')
         <p class="text-steel text-sm leading-relaxed mb-5">
           Licensed electrical contractor and certified Kohler home generator installer proudly serving Dover, PA and the greater York County area.
         </p>
-        <div class="flex flex-wrap gap-2">
+        <div class="flex flex-wrap gap-2 mb-4">
           <span class="inline-flex items-center gap-1.5 bg-navy-mid border border-white/10
                        text-silver text-xs font-heading tracking-wide uppercase px-3 py-1.5">
             <i class="fas fa-shield-halved text-power-red" aria-hidden="true"></i>Licensed &amp; Insured
@@ -37,6 +37,23 @@ $logo_src = file_exists(__DIR__ . '/../assets/images/logo.png')
             <i class="fas fa-certificate text-power-red" aria-hidden="true"></i>Kohler Dealer #1506430
           </span>
         </div>
+
+        <?php
+        $keystone_badge = file_exists(__DIR__ . '/../assets/images/keystone-badge.png')
+                        ? 'assets/images/keystone-badge.png'
+                        : (file_exists(__DIR__ . '/../assets/images/keystone-badge.jpg')
+                          ? 'assets/images/keystone-badge.jpg'
+                          : null);
+        if ($keystone_badge): ?>
+        <a href="https://keystonebcollective.com" target="_blank" rel="noopener noreferrer"
+           class="inline-block cursor-pointer opacity-80 hover:opacity-100 transition-opacity duration-200"
+           aria-label="Member of Keystone B Collective">
+          <img src="<?php echo $keystone_badge; ?>"
+               alt="Member of Keystone B Collective"
+               class="h-10 w-auto object-contain"
+               loading="lazy">
+        </a>
+        <?php endif; ?>
       </div>
 
       <!-- Col 2: Quick links -->
