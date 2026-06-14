@@ -34,7 +34,7 @@ $logo_src = file_exists(__DIR__ . '/../assets/images/logo.png')
           </span>
           <span class="inline-flex items-center gap-1.5 bg-navy-mid border border-white/10
                        text-silver text-xs font-heading tracking-wide uppercase px-3 py-1.5">
-            <i class="fas fa-certificate text-power-red" aria-hidden="true"></i>Kohler Certified
+            <i class="fas fa-certificate text-power-red" aria-hidden="true"></i>Kohler Dealer #1506430
           </span>
         </div>
       </div>
@@ -106,9 +106,9 @@ $logo_src = file_exists(__DIR__ . '/../assets/images/logo.png')
           </div>
           <div class="flex items-center gap-3">
             <i class="fas fa-envelope text-power-red w-4 flex-shrink-0" aria-hidden="true"></i>
-            <a href="mailto:gbrelectricalservices@gmail.com"
+            <a href="mailto:info@lightsonpa.com"
                class="text-steel hover:text-white transition-colors cursor-pointer break-all">
-              gbrelectricalservices@gmail.com
+              info@lightsonpa.com
             </a>
           </div>
         </address>

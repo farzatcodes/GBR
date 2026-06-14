@@ -154,7 +154,7 @@ $service_sections = [
       <div class="h-px w-10 bg-power-red flex-shrink-0" aria-hidden="true"></div>
       <span class="font-heading text-power-red text-sm tracking-widest uppercase">Licensed Electrical Contractor</span>
       <span class="inline-flex items-center gap-1.5 bg-power-red/15 border border-power-red/35 px-3 py-1 rounded-lg text-power-red font-heading text-xs tracking-widest uppercase">
-        <i class="fas fa-certificate" aria-hidden="true"></i> Kohler Authorized Dealer
+        <i class="fas fa-certificate" aria-hidden="true"></i> Kohler Authorized Dealer #1506430
       </span>
     </div>
     <h1 class="font-heading text-white text-5xl sm:text-6xl uppercase tracking-tight mb-4">

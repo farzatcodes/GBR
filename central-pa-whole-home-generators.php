@@ -214,7 +214,7 @@ echo '<script type="application/ld+json">' . json_encode($schema, JSON_UNESCAPED
                   5605 Fish and Game Road, Dover, PA 17315<br>
                   <a href="tel:7172921338" class="text-power-red hover:underline">717-292-1338</a> (Office) &nbsp;|&nbsp;
                   <a href="tel:7175151504" class="text-power-red hover:underline">717-515-1504</a> (Cell/Emergency)<br>
-                  <a href="mailto:gbrelectricalservices@gmail.com" class="text-power-red hover:underline">gbrelectricalservices@gmail.com</a>
+                  <a href="mailto:info@lightsonpa.com" class="text-power-red hover:underline">info@lightsonpa.com</a>
                 </p>
               </address>
             </div>

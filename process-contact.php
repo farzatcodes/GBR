@@ -104,7 +104,7 @@ if (!empty($errors)) {
    BUILD EMAIL
    ================================================================ */
 
-$to      = 'gbrelectricalservices@gmail.com';
+$to      = 'info@lightsonpa.com';
 $subject = 'New Website Inquiry from ' . $name;
 
 /* Plain-text body */

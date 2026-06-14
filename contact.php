@@ -342,9 +342,9 @@ require_once 'includes/header.php';
               </div>
               <div>
                 <div class="font-heading text-silver text-xs tracking-widest uppercase mb-1">Email</div>
-                <a href="mailto:gbrelectricalservices@gmail.com"
+                <a href="mailto:info@lightsonpa.com"
                    class="text-steel hover:text-white transition-colors break-all text-xs leading-snug cursor-pointer">
-                  gbrelectricalservices@gmail.com
+                  info@lightsonpa.com
                 </a>
               </div>
             </div>

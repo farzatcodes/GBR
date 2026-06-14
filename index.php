@@ -430,6 +430,7 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.jpg') ? 'assets/im
         <div>
           <div class="font-heading text-power-red text-xs tracking-widest uppercase">Kohler Authorized Dealer &amp; Installer</div>
           <div class="font-heading text-white text-lg uppercase tracking-wide">York County's Kohler Generator Specialist</div>
+          <div class="font-heading text-steel text-xs tracking-widest uppercase mt-0.5">Dealer #1506430</div>
         </div>
       </div>
     </div>

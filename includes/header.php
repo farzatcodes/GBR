@@ -92,7 +92,7 @@ $default_desc = 'GBR Electrical Services LLC – Licensed electrical contractor 
     "image": "<?php echo $site_url; ?>/assets/images/logo.png",
     "logo": "<?php echo $site_url; ?>/assets/images/logo.png",
     "telephone": ["717-292-1338","717-515-1504"],
-    "email": "gbrelectricalservices@gmail.com",
+    "email": "info@lightsonpa.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "5605 Fish and Game Road",
@@ -305,11 +305,11 @@ $default_desc = 'GBR Electrical Services LLC – Licensed electrical contractor 
     <div class="max-w-7xl mx-auto px-6 h-9 flex items-center justify-between text-xs">
       <div class="flex items-center gap-6 text-steel">
         <span><i class="fas fa-map-marker-alt text-power-red mr-1.5" aria-hidden="true"></i>5605 Fish and Game Rd, Dover, PA 17315</span>
-        <span><i class="fas fa-envelope text-power-red mr-1.5" aria-hidden="true"></i>gbrelectricalservices@gmail.com</span>
+        <span><i class="fas fa-envelope text-power-red mr-1.5" aria-hidden="true"></i>info@lightsonpa.com</span>
       </div>
       <div class="flex items-center gap-5 text-steel">
         <span class="flex items-center gap-1.5"><i class="fas fa-shield-halved text-power-red" aria-hidden="true"></i> Licensed &amp; Insured</span>
-        <span class="flex items-center gap-1.5"><i class="fas fa-certificate text-power-red" aria-hidden="true"></i> Certified Kohler Installer</span>
+        <span class="flex items-center gap-1.5"><i class="fas fa-certificate text-power-red" aria-hidden="true"></i> Kohler Authorized Dealer #1506430</span>
       </div>
     </div>
   </div>

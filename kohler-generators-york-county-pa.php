@@ -201,7 +201,7 @@ echo '<script type="application/ld+json">' . json_encode($schema, JSON_UNESCAPED
                   5605 Fish and Game Road, Dover, PA 17315<br>
                   <a href="tel:7172921338" class="text-power-red hover:underline">717-292-1338</a> (Office) &nbsp;|&nbsp;
                   <a href="tel:7175151504" class="text-power-red hover:underline">717-515-1504</a> (Cell/Emergency)<br>
-                  <a href="mailto:gbrelectricalservices@gmail.com" class="text-power-red hover:underline">gbrelectricalservices@gmail.com</a>
+                  <a href="mailto:info@lightsonpa.com" class="text-power-red hover:underline">info@lightsonpa.com</a>
                 </p>
               </address>
             </div>
@@ -235,7 +235,8 @@ echo '<script type="application/ld+json">' . json_encode($schema, JSON_UNESCAPED
             <div class="w-14 h-14 bg-power-red/15 flex items-center justify-center rounded-xl mb-5">
               <i class="fas fa-certificate text-power-red text-2xl" aria-hidden="true"></i>
             </div>
-            <h3 class="font-heading text-white text-xl uppercase tracking-wide mb-2">Kohler Authorized Dealer</h3>
+            <h3 class="font-heading text-white text-xl uppercase tracking-wide mb-1">Kohler Authorized Dealer</h3>
+            <p class="text-power-red font-heading text-xs tracking-widest uppercase mb-3">Dealer #1506430</p>
             <p class="text-steel text-sm leading-relaxed mb-5">Factory-trained, certified installer for York County. We size, install, register, and service your Kohler generator.</p>
             <a href="contact.php?service=Generator+Installation+(Kohler)" class="btn-red w-full justify-center text-sm mb-3">
               <i class="fas fa-plug-circle-bolt" aria-hidden="true"></i> Get a Generator Quote
