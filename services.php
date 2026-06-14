@@ -51,7 +51,7 @@ $service_sections = [
     'icon'    => 'fas fa-plug-circle-bolt',
     'heading' => 'Generator Installation',
     'sub'     => 'Kohler Authorized Dealer &amp; Whole-Home Generator Specialist',
-    'intro'   => 'As a Kohler authorized dealer and installer, GBR Electrical is York County's one-stop shop for whole-home backup power. We manage your complete project — site assessment, load calculation, permitting, installation, transfer switch wiring, startup, warranty registration, and ongoing maintenance programs.',
+    'intro'   => 'As a Kohler authorized dealer and installer, GBR Electrical is York County\'s one-stop shop for whole-home backup power. We manage your complete project — site assessment, load calculation, permitting, installation, transfer switch wiring, startup, warranty registration, and ongoing maintenance programs.',
     'bullets' => [
       'Whole-home automatic standby generator installation',
       'Kohler 8kW–150kW generator sizing and selection',
