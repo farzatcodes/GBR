@@ -37,47 +37,95 @@ $default_desc = 'GBR Electrical Services LLC – Licensed electrical contractor 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Favicon -->
+  <link rel="icon"             type="image/x-icon" href="/favicon.ico">
+  <link rel="shortcut icon"    type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon"                     href="/assets/images/logo.png">
+
+  <?php
+  /* ── Canonical & base URL ── */
+  $site_url     = 'https://lightsonpa.com';
+  $req_path     = ltrim(parse_url($_SERVER['REQUEST_URI'] ?? ('/' . $current_page), PHP_URL_PATH), '/');
+  $canonical_url = isset($canonical) ? $canonical : $site_url . '/' . $req_path;
+  $og_img_abs   = isset($og_image) ? $og_image : $site_url . '/assets/images/logo.png';
+  ?>
+  <link rel="canonical" href="<?php echo htmlspecialchars($canonical_url); ?>">
+
   <!-- SEO -->
-  <meta name="description" content="<?php echo htmlspecialchars(
-      isset($meta_description) ? $meta_description : $default_desc
-  ); ?>">
-  <meta name="keywords"    content="electrician Dover PA, electrical contractor York County PA, Kohler generator installer, panel upgrade, emergency electrician, generator installation Pennsylvania">
+  <meta name="description" content="<?php echo htmlspecialchars(isset($meta_description) ? $meta_description : $default_desc); ?>">
+  <meta name="keywords"    content="electrician Dover PA, electrical contractor York County PA, Kohler generator installer York County, whole home generator installation Pennsylvania, backup power York County PA, standby generator Central PA, panel upgrade Dover PA, generator maintenance program PA, military discount electrician PA, authorized Kohler dealer PA">
   <meta name="robots"      content="index, follow">
+  <meta name="author"      content="GBR Electrical Services, LLC">
+
+  <!-- Local SEO geo tags (Dover PA 17315) -->
+  <meta name="geo.region"    content="US-PA">
+  <meta name="geo.placename" content="Dover, PA">
+  <meta name="geo.position"  content="40.0048;-76.8413">
+  <meta name="ICBM"          content="40.0048, -76.8413">
+
   <title><?php echo isset($page_title)
       ? htmlspecialchars($page_title) . ' | GBR Electrical Services, LLC'
-      : 'GBR Electrical Services, LLC – Electrical & Kohler Generator Installation, Dover PA';
+      : 'GBR Electrical Services, LLC – Kohler Generator Installation & Electrical Contractor, Dover PA';
   ?></title>
 
   <!-- Open Graph -->
-  <meta property="og:type"        content="website">
+  <meta property="og:type"        content="<?php echo isset($og_type) ? htmlspecialchars($og_type) : 'website'; ?>">
   <meta property="og:site_name"   content="GBR Electrical Services, LLC">
-  <meta property="og:title"       content="<?php echo isset($page_title) ? htmlspecialchars($page_title) : 'GBR Electrical Services, LLC'; ?>">
+  <meta property="og:url"         content="<?php echo htmlspecialchars($canonical_url); ?>">
+  <meta property="og:title"       content="<?php echo isset($page_title) ? htmlspecialchars($page_title) . ' | GBR Electrical' : 'GBR Electrical Services, LLC'; ?>">
   <meta property="og:description" content="<?php echo htmlspecialchars(isset($meta_description) ? $meta_description : $default_desc); ?>">
-  <meta property="og:image"       content="assets/images/logo.png">
+  <meta property="og:image"       content="<?php echo htmlspecialchars($og_img_abs); ?>">
+  <meta property="og:locale"      content="en_US">
 
-  <!-- Local-business structured data -->
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="<?php echo isset($page_title) ? htmlspecialchars($page_title) : 'GBR Electrical Services, LLC'; ?>">
+  <meta name="twitter:description" content="<?php echo htmlspecialchars(isset($meta_description) ? $meta_description : $default_desc); ?>">
+  <meta name="twitter:image"       content="<?php echo htmlspecialchars($og_img_abs); ?>">
+
+  <!-- LocalBusiness + ElectricalContractor Schema (NAP) -->
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"ElectricalContractor",
-    "name":"GBR Electrical Services, LLC",
-    "image":"assets/images/logo.png",
-    "telephone":["717-292-1338","717-515-1504"],
-    "email":"gbrelectricalservices@gmail.com",
-    "address":{
-      "@type":"PostalAddress",
-      "streetAddress":"5605 Fish and Game Road",
-      "addressLocality":"Dover",
-      "addressRegion":"PA",
-      "postalCode":"17315",
-      "addressCountry":"US"
+    "@context": "https://schema.org",
+    "@type": ["ElectricalContractor","LocalBusiness"],
+    "name": "GBR Electrical Services, LLC",
+    "image": "<?php echo $site_url; ?>/assets/images/logo.png",
+    "logo": "<?php echo $site_url; ?>/assets/images/logo.png",
+    "telephone": ["717-292-1338","717-515-1504"],
+    "email": "gbrelectricalservices@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "5605 Fish and Game Road",
+      "addressLocality": "Dover",
+      "addressRegion": "PA",
+      "postalCode": "17315",
+      "addressCountry": "US"
     },
-    "url":"https://gbrelectricalservices.com",
-    "openingHoursSpecification":[
-      {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:00","closes":"18:00"}
+    "url": "<?php echo $site_url; ?>",
+    "openingHoursSpecification": [
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:00","closes":"18:00"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"08:00","closes":"14:00"}
     ],
-    "areaServed":"York County, PA",
-    "priceRange":"$$"
+    "areaServed": [
+      {"@type":"City","name":"Dover","addressRegion":"PA"},
+      {"@type":"City","name":"York","addressRegion":"PA"},
+      {"@type":"City","name":"Dillsburg","addressRegion":"PA"},
+      {"@type":"City","name":"Mechanicsburg","addressRegion":"PA"},
+      {"@type":"County","name":"York County","addressRegion":"PA"}
+    ],
+    "priceRange": "$$",
+    "description": "Licensed electrical contractor and authorized Kohler generator dealer serving Dover, PA and York County for over 40 years. Military and First Responder discounts available.",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Electrical Services",
+      "itemListElement": [
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Whole-Home Standby Generator Installation"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Generator Maintenance Programs"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Electrical Panel Upgrades"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Electrical Repairs"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Wiring and Lighting"}}
+      ]
+    }
   }
   </script>
 
@@ -284,7 +332,7 @@ $default_desc = 'GBR Electrical Services LLC – Licensed electrical contractor 
           ['href'=>'index.php',           'label'=>'Home'],
           ['href'=>'services.php',         'label'=>'Services'],
           ['href'=>'index.php#generators', 'label'=>'Generators'],
-          ['href'=>'index.php#about',      'label'=>'About'],
+          ['href'=>'blog.php',             'label'=>'Articles'],
           ['href'=>'contact.php',          'label'=>'Contact'],
         ];
         foreach ($nav as $item):
@@ -337,7 +385,7 @@ $default_desc = 'GBR Electrical Services LLC – Licensed electrical contractor 
         <a href="index.php"            class="block px-4 min-h-[44px] flex items-center font-heading text-sm tracking-widest uppercase text-silver hover:text-white hover:bg-white/5 transition-all cursor-pointer">Home</a>
         <a href="services.php"         class="block px-4 min-h-[44px] flex items-center font-heading text-sm tracking-widest uppercase text-silver hover:text-white hover:bg-white/5 transition-all cursor-pointer">Services</a>
         <a href="index.php#generators" class="block px-4 min-h-[44px] flex items-center font-heading text-sm tracking-widest uppercase text-silver hover:text-white hover:bg-white/5 transition-all cursor-pointer">Generators</a>
-        <a href="index.php#about"      class="block px-4 min-h-[44px] flex items-center font-heading text-sm tracking-widest uppercase text-silver hover:text-white hover:bg-white/5 transition-all cursor-pointer">About</a>
+        <a href="blog.php"             class="block px-4 min-h-[44px] flex items-center font-heading text-sm tracking-widest uppercase text-silver hover:text-white hover:bg-white/5 transition-all cursor-pointer">Articles</a>
         <a href="contact.php"          class="block px-4 min-h-[44px] flex items-center font-heading text-sm tracking-widest uppercase text-silver hover:text-white hover:bg-white/5 transition-all cursor-pointer">Contact</a>
       </div>
       <div class="px-4 pb-5 pt-3 border-t border-white/10 space-y-3">

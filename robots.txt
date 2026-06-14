@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /process-contact.php
+Disallow: /contact_log.txt
+
+Sitemap: https://lightsonpa.com/sitemap.xml
