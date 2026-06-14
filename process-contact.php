@@ -1,14 +1,14 @@
 <?php
 /**
  * GBR Electrical Services, LLC — Contact Form Processor
+ * Uses PHPMailer + Spaceship SMTP. Credentials stored in .env
  *
- * Validates the POST from contact.php, sends an email notification,
- * then redirects back to contact.php with a status query string.
- *
- * NOTE: PHP's built-in mail() requires the server to have a working
- * mail transport (sendmail/SMTP). If your host doesn't support it,
- * replace the mail() call below with PHPMailer or a transactional
- * API (SendGrid, Mailgun, etc.).
+ * PHPMailer setup:
+ *   1. Download from https://github.com/PHPMailer/PHPMailer/releases
+ *   2. Extract and rename the folder to  PHPMailer/  in this directory
+ *   3. Required files: PHPMailer/src/PHPMailer.php
+ *                      PHPMailer/src/SMTP.php
+ *                      PHPMailer/src/Exception.php
  */
 
 /* ── Prevent direct GET access ── */
@@ -35,19 +35,33 @@ function redirect_with(string $status, string $message = ''): void
     exit;
 }
 
+/* Parse .env file — simple key=value, ignores comments and blank lines */
+function load_env(string $path): void
+{
+    if (!file_exists($path)) return;
+    $lines = file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    foreach ($lines as $line) {
+        $line = trim($line);
+        if ($line === '' || str_starts_with($line, '#')) continue;
+        [$key, $val] = array_map('trim', explode('=', $line, 2));
+        if ($key !== '') putenv("$key=$val");
+    }
+}
+
+load_env(__DIR__ . '/.env');
+
 
 /* ================================================================
    SPAM / HONEYPOT CHECK
    ================================================================ */
 
-/* If the hidden "website" field is filled in, it's almost certainly a bot */
 if (!empty($_POST['website'])) {
     redirect_with('success', 'Thank you! We will be in touch shortly.');
 }
 
 
 /* ================================================================
-   RATE LIMIT (session-based, basic protection)
+   RATE LIMIT (session-based)
    ================================================================ */
 
 session_start();
@@ -65,104 +79,233 @@ $_SESSION['last_contact_submit'] = $now;
 
 $errors = [];
 
-/* Name */
-$name = clean($_POST['name'] ?? '');
-if (strlen($name) < 2) {
-    $errors[] = 'Please enter your full name.';
-}
-
-/* Phone */
-$phone = clean($_POST['phone'] ?? '');
-if (!preg_match('/[\d\s\-\(\)\+\.]{7,20}/', $phone)) {
-    $errors[] = 'Please enter a valid phone number.';
-}
-
-/* Email (optional but validated if provided) */
-$email = clean($_POST['email'] ?? '');
-if ($email !== '' && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $errors[] = 'Please enter a valid email address.';
-}
-
-/* Message */
+$name    = clean($_POST['name']    ?? '');
+$phone   = clean($_POST['phone']   ?? '');
+$email   = clean($_POST['email']   ?? '');
 $message = clean($_POST['message'] ?? '');
-if (strlen($message) < 10) {
+$service = clean($_POST['service'] ?? '');
+$address = clean($_POST['address'] ?? '');
+$source  = clean($_POST['source']  ?? '');
+
+if (strlen($name) < 2)
+    $errors[] = 'Please enter your full name.';
+
+if (!preg_match('/[\d\s\-\(\)\+\.]{7,20}/', $phone))
+    $errors[] = 'Please enter a valid phone number.';
+
+if ($email !== '' && !filter_var($email, FILTER_VALIDATE_EMAIL))
+    $errors[] = 'Please enter a valid email address.';
+
+if (strlen($message) < 10)
     $errors[] = 'Please enter a message with at least 10 characters.';
-}
 
-/* Optional fields */
-$service = clean($_POST['service']  ?? '');
-$address = clean($_POST['address']  ?? '');
-$source  = clean($_POST['source']   ?? '');
-
-/* If validation failed, redirect with generic error */
 if (!empty($errors)) {
     redirect_with('error', implode(' ', $errors));
 }
 
 
 /* ================================================================
-   BUILD EMAIL
+   LOAD PHPMAILER
    ================================================================ */
 
-$to      = 'info@lightsonpa.com';
-$subject = 'New Website Inquiry from ' . $name;
+$phpmailer_path = __DIR__ . '/PHPMailer/src/PHPMailer.php';
 
-/* Plain-text body */
-$body_lines = [
+if (!file_exists($phpmailer_path)) {
+    /* PHPMailer not yet uploaded — log and inform */
+    $log_entry = date('Y-m-d H:i:s') . ' | ' . $name . ' | ' . $phone . ' | ' . $email . ' | ' . $service . "\n";
+    @file_put_contents(__DIR__ . '/contact_log.txt', $log_entry, FILE_APPEND | LOCK_EX);
+    redirect_with('error', 'Mail system not configured yet. Please call us at 717-467-1712.');
+}
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require __DIR__ . '/PHPMailer/src/Exception.php';
+require __DIR__ . '/PHPMailer/src/PHPMailer.php';
+require __DIR__ . '/PHPMailer/src/SMTP.php';
+
+
+/* ================================================================
+   BUILD HTML EMAIL BODY
+   ================================================================ */
+
+$submitted = date('F j, Y \a\t g:i A T');
+$reply_to  = $email ?: getenv('MAIL_TO');
+
+$html_body = <<<HTML
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<body style="margin:0;padding:0;background:#f4f4f4;font-family:Arial,sans-serif;">
+<table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;padding:30px 0;">
+<tr><td align="center">
+<table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:8px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.08);">
+
+  <!-- Header -->
+  <tr>
+    <td style="background:#1F1F1F;padding:24px 32px;border-bottom:4px solid #FC0D15;">
+      <img src="https://lightsonpa.com/assets/images/logo.png" alt="GBR Electrical Services, LLC" width="160" style="display:block;max-width:160px;">
+    </td>
+  </tr>
+
+  <!-- Title bar -->
+  <tr>
+    <td style="background:#FC0D15;padding:12px 32px;">
+      <p style="margin:0;font-size:13px;font-weight:700;color:#ffffff;letter-spacing:1px;text-transform:uppercase;">
+        &#9889; New Website Inquiry
+      </p>
+    </td>
+  </tr>
+
+  <!-- Body -->
+  <tr>
+    <td style="padding:28px 32px;">
+
+      <p style="margin:0 0 20px;font-size:22px;font-weight:700;color:#1F1F1F;">
+        You have a new message from <span style="color:#FC0D15;">{$name}</span>
+      </p>
+
+      <!-- Details table -->
+      <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin-bottom:24px;">
+        <tr style="background:#f9f9f9;">
+          <td style="padding:10px 14px;font-size:12px;font-weight:700;color:#8A8A8A;text-transform:uppercase;letter-spacing:.6px;width:140px;border-bottom:1px solid #eeeeee;">Name</td>
+          <td style="padding:10px 14px;font-size:14px;color:#1F1F1F;border-bottom:1px solid #eeeeee;">{$name}</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 14px;font-size:12px;font-weight:700;color:#8A8A8A;text-transform:uppercase;letter-spacing:.6px;border-bottom:1px solid #eeeeee;">Phone</td>
+          <td style="padding:10px 14px;font-size:14px;color:#1F1F1F;font-weight:700;border-bottom:1px solid #eeeeee;"><a href="tel:{$phone}" style="color:#FC0D15;text-decoration:none;">{$phone}</a></td>
+        </tr>
+        <tr style="background:#f9f9f9;">
+          <td style="padding:10px 14px;font-size:12px;font-weight:700;color:#8A8A8A;text-transform:uppercase;letter-spacing:.6px;border-bottom:1px solid #eeeeee;">Email</td>
+          <td style="padding:10px 14px;font-size:14px;color:#1F1F1F;border-bottom:1px solid #eeeeee;">
+            {$email}
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:10px 14px;font-size:12px;font-weight:700;color:#8A8A8A;text-transform:uppercase;letter-spacing:.6px;border-bottom:1px solid #eeeeee;">Service</td>
+          <td style="padding:10px 14px;font-size:14px;color:#1F1F1F;border-bottom:1px solid #eeeeee;">{$service}</td>
+        </tr>
+        <tr style="background:#f9f9f9;">
+          <td style="padding:10px 14px;font-size:12px;font-weight:700;color:#8A8A8A;text-transform:uppercase;letter-spacing:.6px;border-bottom:1px solid #eeeeee;">Address</td>
+          <td style="padding:10px 14px;font-size:14px;color:#1F1F1F;border-bottom:1px solid #eeeeee;">{$address}</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 14px;font-size:12px;font-weight:700;color:#8A8A8A;text-transform:uppercase;letter-spacing:.6px;">Referral</td>
+          <td style="padding:10px 14px;font-size:14px;color:#1F1F1F;">{$source}</td>
+        </tr>
+      </table>
+
+      <!-- Message box -->
+      <p style="margin:0 0 8px;font-size:12px;font-weight:700;color:#8A8A8A;text-transform:uppercase;letter-spacing:.6px;">Message</p>
+      <div style="background:#f9f9f9;border-left:4px solid #FC0D15;padding:16px 20px;border-radius:0 6px 6px 0;margin-bottom:24px;">
+        <p style="margin:0;font-size:14px;color:#333333;line-height:1.7;">{$message}</p>
+      </div>
+
+      <!-- Call to action -->
+      <table cellpadding="0" cellspacing="0">
+        <tr>
+          <td style="background:#FC0D15;border-radius:6px;padding:0;">
+            <a href="tel:{$phone}" style="display:inline-block;padding:12px 28px;font-size:14px;font-weight:700;color:#ffffff;text-decoration:none;letter-spacing:.5px;">
+              &#128222;&nbsp; Call {$name} Back
+            </a>
+          </td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+
+  <!-- Footer -->
+  <tr>
+    <td style="background:#1F1F1F;padding:16px 32px;">
+      <p style="margin:0;font-size:11px;color:#8A8A8A;">
+        Submitted {$submitted} &bull; IP: {$_SERVER['REMOTE_ADDR']} &bull; lightsonpa.com
+      </p>
+    </td>
+  </tr>
+
+</table>
+</td></tr>
+</table>
+</body>
+</html>
+HTML;
+
+/* Plain text fallback */
+$text_body = implode("\r\n", [
     'GBR ELECTRICAL SERVICES — NEW CONTACT FORM SUBMISSION',
     str_repeat('=', 54),
     '',
-    'Name:            ' . $name,
-    'Phone:           ' . $phone,
-    'Email:           ' . ($email ?: '(not provided)'),
-    'Service Type:    ' . ($service ?: '(not selected)'),
-    'Service Address: ' . ($address ?: '(not provided)'),
-    'Referral Source: ' . ($source  ?: '(not provided)'),
+    'Name:    ' . $name,
+    'Phone:   ' . $phone,
+    'Email:   ' . ($email ?: '(not provided)'),
+    'Service: ' . ($service ?: '(not selected)'),
+    'Address: ' . ($address ?: '(not provided)'),
+    'Source:  ' . ($source  ?: '(not provided)'),
     '',
     'MESSAGE:',
     str_repeat('-', 40),
     $message,
     str_repeat('-', 40),
     '',
-    'Submitted: ' . date('Y-m-d H:i:s T'),
-    'IP Address: ' . ($_SERVER['REMOTE_ADDR'] ?? 'unknown'),
-    '',
-    'Reply directly to this email or call: ' . $phone,
-];
-
-$body = implode("\r\n", $body_lines);
-
-/* Headers — set Reply-To as customer's email if provided */
-$reply_to = $email ?: $to;
-$headers  = implode("\r\n", [
-    'From: GBR Electrical Website <no-reply@gbrelectricalservices.com>',
-    'Reply-To: ' . $name . ' <' . $reply_to . '>',
-    'X-Mailer: PHP/' . PHP_VERSION,
-    'Content-Type: text/plain; charset=UTF-8',
+    'Submitted: ' . $submitted,
+    'IP: '        . ($_SERVER['REMOTE_ADDR'] ?? 'unknown'),
 ]);
 
 
 /* ================================================================
-   SEND EMAIL
+   SEND VIA PHPMAILER + SPACESHIP SMTP
    ================================================================ */
 
-$sent = @mail($to, $subject, $body, $headers);
+try {
+    $mail = new PHPMailer(true);
 
-if ($sent) {
+    /* Server settings */
+    $mail->isSMTP();
+    $mail->Host       = getenv('SMTP_HOST')   ?: 'mail.spaceship.com';
+    $mail->SMTPAuth   = true;
+    $mail->Username   = getenv('SMTP_USER');
+    $mail->Password   = getenv('SMTP_PASS');
+    $mail->SMTPSecure = getenv('SMTP_SECURE') === 'ssl' ? PHPMailer::ENCRYPTION_SMTPS : PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port       = (int)(getenv('SMTP_PORT') ?: 587);
+
+    /* From */
+    $mail->setFrom(
+        getenv('MAIL_FROM') ?: 'info@lightsonpa.com',
+        getenv('MAIL_FROM_NAME') ?: 'GBR Electrical Services'
+    );
+
+    /* To */
+    $mail->addAddress(getenv('MAIL_TO') ?: 'info@lightsonpa.com', 'GBR Electrical');
+
+    /* Reply-To — use customer's email so you can hit Reply directly */
+    if ($email) {
+        $mail->addReplyTo($email, $name);
+    }
+
+    /* Content */
+    $mail->isHTML(true);
+    $mail->Subject = 'New Inquiry: ' . $name . ' — ' . ($service ?: 'General');
+    $mail->Body    = $html_body;
+    $mail->AltBody = $text_body;
+
+    $mail->send();
+
     redirect_with(
         'success',
         'Thank you, ' . $name . '! Your message has been sent. We\'ll be in touch within one business day.'
     );
-} else {
-    /*
-     * mail() failed — possibly no MTA configured on this server.
-     * Log the submission so no lead is lost, then inform the user.
-     */
-    $log_entry = date('Y-m-d H:i:s') . ' | ' . $name . ' | ' . $phone . ' | ' . $email . ' | ' . $service . "\n";
+
+} catch (Exception $e) {
+
+    /* Log the lead so it's never lost */
+    $log_entry = date('Y-m-d H:i:s') . ' | ' . $name . ' | ' . $phone . ' | ' . $email
+               . ' | ' . $service . ' | MAILER_ERROR: ' . $mail->ErrorInfo . "\n";
     @file_put_contents(__DIR__ . '/contact_log.txt', $log_entry, FILE_APPEND | LOCK_EX);
 
     redirect_with(
         'error',
-        'Your message could not be delivered automatically. Please call us directly at 717-467-1712 or 717-515-1504.'
+        'Your message could not be delivered. Please call us directly at 717-467-1712 or 717-515-1504.'
     );
 }

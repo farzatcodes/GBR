@@ -1,0 +1,5 @@
+# Block direct web access to sensitive files
+<FilesMatch "^\.env|contact_log\.txt$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

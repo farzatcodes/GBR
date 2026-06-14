@@ -1,1 +1,11 @@
 .claude/skills/ui-ux-pro-max/scripts/__pycache__/
+
+# Environment — never commit credentials
+.env
+.env.*
+
+# PHPMailer library (upload manually)
+PHPMailer/
+
+# Form submission log
+contact_log.txt
