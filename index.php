@@ -48,7 +48,7 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.jpg') ? 'assets/im
   <div class="absolute inset-y-0 left-0 w-1 bg-power-red" aria-hidden="true"></div>
 
   <div class="absolute bottom-0 right-0 w-[700px] h-[700px] pointer-events-none opacity-[0.045]"
-       style="background:radial-gradient(circle,#B31217 0%,transparent 70%);"
+       style="background:radial-gradient(circle,#FC0D15 0%,transparent 70%);"
        aria-hidden="true"></div>
 
   <div class="max-w-7xl mx-auto px-5 sm:px-8 py-24 md:py-32 w-full relative z-10">
@@ -285,7 +285,7 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.jpg') ? 'assets/im
 <section class="bg-navy py-20 relative overflow-hidden dot-grid" id="about" aria-labelledby="about-heading">
 
   <div class="absolute -left-40 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full opacity-[0.06] pointer-events-none"
-       style="background:radial-gradient(circle,#B31217 0%,transparent 70%);" aria-hidden="true"></div>
+       style="background:radial-gradient(circle,#FC0D15 0%,transparent 70%);" aria-hidden="true"></div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
 
