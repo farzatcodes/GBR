@@ -88,10 +88,10 @@ $default_desc = 'GBR Electrical Services LLC – Licensed electrical contractor 
       theme: {
         extend: {
           colors: {
-            'navy':         '#0B1320',
-            'navy-light':   '#0f1a2e',
-            'navy-mid':     '#162138',
-            'navy-card':    '#1b2845',
+            'navy':         '#050505',
+            'navy-light':   '#0a0a0a',
+            'navy-mid':     '#111111',
+            'navy-card':    '#1a1a1a',
             'power-red':    '#B31217',
             'power-red-dk': '#8f0d11',
             'steel':        '#7A818C',
@@ -136,7 +136,7 @@ $default_desc = 'GBR Electrical Services LLC – Licensed electrical contractor 
     }
     .title-accent.center::after { margin-left:auto; margin-right:auto; }
 
-    /* ── Buttons (min-height 44px for touch targets) ── */
+    /* ── Buttons (min-height 44px for touch targets, rounded corners) ── */
     .btn-red {
       display:inline-flex; align-items:center; justify-content:center; gap:8px;
       min-height:44px;
@@ -145,6 +145,7 @@ $default_desc = 'GBR Electrical Services LLC – Licensed electrical contractor 
       letter-spacing:.1em; text-transform:uppercase;
       padding:12px 28px;
       border:2px solid #B31217;
+      border-radius:8px;
       text-decoration:none; cursor:pointer;
       transition:background .22s ease, box-shadow .22s ease, transform .18s ease;
     }
@@ -164,6 +165,7 @@ $default_desc = 'GBR Electrical Services LLC – Licensed electrical contractor 
       letter-spacing:.1em; text-transform:uppercase;
       padding:12px 28px;
       border:2px solid rgba(255,255,255,.5);
+      border-radius:8px;
       text-decoration:none; cursor:pointer;
       transition:background .22s ease, border-color .22s ease;
     }
@@ -177,11 +179,12 @@ $default_desc = 'GBR Electrical Services LLC – Licensed electrical contractor 
       letter-spacing:.1em; text-transform:uppercase;
       padding:12px 28px;
       border:2px solid #B31217;
+      border-radius:8px;
       text-decoration:none; cursor:pointer;
       transition:background .22s ease, color .22s ease;
     }
     .btn-outline-red:hover  { background:#B31217; color:#fff; }
-    .btn-outline-red:focus-visible { outline:3px solid #0B1320; outline-offset:3px; }
+    .btn-outline-red:focus-visible { outline:3px solid #050505; outline-offset:3px; }
 
     /* ── Card lift ── */
     .card-lift { transition:transform .25s ease, box-shadow .25s ease; }

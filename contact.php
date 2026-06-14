@@ -382,13 +382,13 @@ require_once 'includes/header.php';
           <a href="tel:7172921338"
              class="block bg-white text-power-red font-heading text-base tracking-widest
                     uppercase px-5 min-h-[44px] flex items-center justify-center
-                    hover:bg-silver-lt transition-colors mb-2 cursor-pointer">
+                    hover:bg-silver-lt transition-colors mb-2 cursor-pointer rounded-lg">
             <i class="fas fa-phone mr-2" aria-hidden="true"></i> 717-292-1338
           </a>
           <a href="tel:7175151504"
              class="block border border-white/40 text-white font-heading text-sm tracking-widest
                     uppercase px-5 min-h-[44px] flex items-center justify-center
-                    hover:bg-white/10 transition-colors cursor-pointer">
+                    hover:bg-white/10 transition-colors cursor-pointer rounded-lg">
             <i class="fas fa-mobile-alt mr-2" aria-hidden="true"></i> 717-515-1504
           </a>
         </div>

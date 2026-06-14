@@ -163,7 +163,7 @@ require_once 'includes/header.php';
             <a href="tel:7172921338"
                class="mt-7 flex items-center justify-center gap-2.5 bg-power-red hover:bg-power-red-dk
                       transition-colors min-h-[44px] px-5 py-3 font-heading text-white
-                      text-sm tracking-widest uppercase cursor-pointer">
+                      text-sm tracking-widest uppercase cursor-pointer rounded-lg">
               <i class="fas fa-phone" aria-hidden="true"></i> 717-292-1338
             </a>
           </div>
@@ -448,7 +448,7 @@ require_once 'includes/header.php';
             <a href="contact.php?service=Generator+Installation+(Kohler)"
                class="inline-flex items-center gap-2 bg-white text-power-red font-heading text-sm
                       uppercase tracking-widest px-5 min-h-[44px] py-2.5 hover:bg-silver-lt
-                      transition-colors cursor-pointer">
+                      transition-colors cursor-pointer rounded-lg">
               Schedule Consultation
             </a>
           </div>
@@ -530,7 +530,7 @@ require_once 'includes/header.php';
     <div class="flex flex-wrap justify-center gap-5 mb-8">
       <a href="tel:7172921338"
          class="flex items-center gap-3 bg-white/10 hover:bg-white/20 border border-white/25
-                min-h-[54px] px-6 py-3 text-white transition-colors cursor-pointer">
+                min-h-[54px] px-6 py-3 text-white transition-colors cursor-pointer rounded-lg">
         <i class="fas fa-phone text-xl" aria-hidden="true"></i>
         <div class="text-left">
           <div class="text-xs text-red-200 uppercase tracking-widest font-heading">Office</div>
@@ -539,7 +539,7 @@ require_once 'includes/header.php';
       </a>
       <a href="tel:7175151504"
          class="flex items-center gap-3 bg-white/10 hover:bg-white/20 border border-white/25
-                min-h-[54px] px-6 py-3 text-white transition-colors cursor-pointer">
+                min-h-[54px] px-6 py-3 text-white transition-colors cursor-pointer rounded-lg">
         <i class="fas fa-mobile-alt text-xl" aria-hidden="true"></i>
         <div class="text-left">
           <div class="text-xs text-red-200 uppercase tracking-widest font-heading">Cell / Emergency</div>
@@ -551,7 +551,7 @@ require_once 'includes/header.php';
     <a href="contact.php"
        class="inline-flex items-center gap-2 bg-white text-power-red font-heading text-base
               tracking-widest uppercase px-10 min-h-[52px] py-4 hover:bg-silver-lt
-              transition-colors cursor-pointer shadow-lg">
+              transition-colors cursor-pointer shadow-lg rounded-xl">
       <i class="fas fa-paper-plane" aria-hidden="true"></i> Send Us a Message
     </a>
   </div>

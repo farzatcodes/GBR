@@ -170,7 +170,7 @@ $service_sections = [
       <a href="#<?php echo $s['id']; ?>"
          class="font-heading text-xs tracking-widest uppercase px-4 min-h-[40px] flex items-center
                 border border-power-red/30 text-power-red hover:bg-power-red hover:text-white
-                transition-all duration-200 cursor-pointer">
+                transition-all duration-200 cursor-pointer rounded-lg">
         <?php echo strip_tags($s['heading']); ?>
       </a>
       <?php endforeach; ?>
@@ -242,13 +242,13 @@ $service_sections = [
             <a href="tel:7172921338"
                class="flex items-center justify-center gap-2 bg-power-red hover:bg-power-red-dk
                       transition-colors text-white font-heading text-sm tracking-widest uppercase
-                      min-h-[44px] py-3 cursor-pointer">
+                      min-h-[44px] py-3 cursor-pointer rounded-lg">
               <i class="fas fa-phone" aria-hidden="true"></i> 717-292-1338
             </a>
             <a href="contact.php"
                class="flex items-center justify-center gap-2 border border-white/20 hover:border-white/40
                       hover:bg-white/5 transition-all text-silver font-heading text-sm tracking-widest
-                      uppercase min-h-[44px] py-3 cursor-pointer">
+                      uppercase min-h-[44px] py-3 cursor-pointer rounded-lg">
               <i class="fas fa-envelope" aria-hidden="true"></i> Send a Message
             </a>
           </div>
