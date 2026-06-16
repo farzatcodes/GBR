@@ -145,6 +145,23 @@ $logo_src = file_exists(__DIR__ . '/../assets/images/logo.png')
     </div><!-- /grid -->
   </div>
 
+  <!-- ── Service area strip ── -->
+  <div class="border-t border-white/8 bg-navy-light/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6">
+      <h3 class="font-heading text-steel text-xs tracking-widest uppercase mb-3">Proudly Serving</h3>
+      <p class="text-steel text-sm leading-relaxed">
+        <?php
+        $service_areas = [
+          'Dover', 'York', 'Dillsburg', 'Mechanicsburg', 'Red Lion', 'Spring Grove',
+          'Hanover', 'Manchester', 'New Cumberland', 'Lewisberry', 'Wrightsville',
+          'East Berlin', 'Camp Hill', 'Etters',
+        ];
+        echo htmlspecialchars(implode(' • ', $service_areas));
+        ?> &mdash; and all of York County, PA.
+      </p>
+    </div>
+  </div>
+
   <!-- ── Bottom bar ── -->
   <div class="border-t border-white/8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-5 flex flex-col sm:flex-row

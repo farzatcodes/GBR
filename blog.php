@@ -6,6 +6,24 @@ require_once 'includes/header.php';
 
 $articles = [
   [
+    'href'    => 'kohler-generator-dealer-pennsylvania.php',
+    'date'    => 'June 16, 2026',
+    'cat'     => 'Kohler Generators',
+    'h1'      => 'Kohler Generator Dealer in PA — What Homeowners Should Know',
+    'excerpt' => 'Looking for an authorized Kohler generator dealer in PA? GBR Electrical (Dealer #1506430) explains what authorized dealer status means and how to verify it before you hire anyone.',
+    'read'    => '7 min read',
+    'icon'    => 'fas fa-certificate',
+  ],
+  [
+    'href'    => 'electrical-services-pennsylvania.php',
+    'date'    => 'June 16, 2026',
+    'cat'     => 'Electrical Services',
+    'h1'      => 'Electrical Services in Pennsylvania — Full Resource Guide',
+    'excerpt' => 'A complete guide to GBR Electrical\'s services, service area, and resources for homeowners and businesses across Dover, PA, York County, and Central Pennsylvania.',
+    'read'    => '5 min read',
+    'icon'    => 'fas fa-bolt',
+  ],
+  [
     'href'    => 'central-pa-whole-home-generators.php',
     'date'    => 'June 14, 2026',
     'cat'     => 'Generator Installation',
