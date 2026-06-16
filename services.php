@@ -5,8 +5,8 @@
  *   consistent touch targets, semantic HTML, lazy-loaded assets.
  */
 
-$page_title       = 'Electrical Services';
-$meta_description = 'Complete electrical services by GBR Electrical Services LLC — repairs, panel upgrades, Kohler generator installation, wiring, lighting, and commercial electrical in Dover, PA.';
+$page_title       = 'Electrical Services in PA | York County & Dover Electrician';
+$meta_description = 'Electrical services in PA from GBR Electrical Services LLC — repairs, panel upgrades, Kohler generator installation, wiring, lighting, and commercial electrical serving Dover, PA, York County, and Central Pennsylvania.';
 
 require_once 'includes/header.php';
 

@@ -28,6 +28,40 @@ $schema = [
   'keywords' => 'authorized Kohler generator dealer PA, Kohler generator York County, Kohler generator installer Dover PA, generator installation Pennsylvania, standby generator Central PA',
 ];
 echo '<script type="application/ld+json">' . json_encode($schema, JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT) . '</script>';
+
+$faq_items = [
+  [
+    'q' => 'Is GBR Electrical a Kohler dealer in PA?',
+    'a' => 'Yes. GBR Electrical Services, LLC is an authorized Kohler generator dealer (Dealer #1506430) serving Dover, PA, York County, and Central Pennsylvania. As an authorized dealer, GBR is factory-trained on Kohler equipment and provides full-service sizing, installation, warranty registration, and ongoing maintenance.',
+  ],
+  [
+    'q' => 'What areas in Pennsylvania does GBR Electrical serve as a Kohler dealer?',
+    'a' => 'GBR Electrical installs and services Kohler standby generators throughout York County, PA, including Dover, York, Red Lion, Spring Grove, Hanover, Manchester, Dillsburg, Mechanicsburg, and surrounding Central Pennsylvania communities.',
+  ],
+  [
+    'q' => 'Why does GBR Electrical recommend Kohler generators over other brands?',
+    'a' => 'GBR Electrical recommends Kohler because of its American-made manufacturing quality, superior voltage regulation under real-world loads, and a comprehensive warranty backed by genuine parts and authorized-dealer support — all factors that matter for long-term reliability in Central Pennsylvania.',
+  ],
+  [
+    'q' => 'How do I get a quote for a Kohler generator installation in York County?',
+    'a' => 'Homeowners can request a free, no-pressure consultation by calling GBR Electrical at 717-467-1712 or submitting a request through the contact form at lightsonpa.com. GBR will assess your home\'s electrical load and recommend the right Kohler system for your needs.',
+  ],
+];
+$faq_schema = [
+  '@context' => 'https://schema.org',
+  '@type'    => 'FAQPage',
+  'mainEntity' => array_map(function ($item) {
+    return [
+      '@type' => 'Question',
+      'name'  => $item['q'],
+      'acceptedAnswer' => [
+        '@type' => 'Answer',
+        'text'  => $item['a'],
+      ],
+    ];
+  }, $faq_items),
+];
+echo '<script type="application/ld+json">' . json_encode($faq_schema, JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT) . '</script>';
 ?>
 
 <!-- ================================================================
@@ -100,6 +134,7 @@ echo '<script type="application/ld+json">' . json_encode($schema, JSON_UNESCAPED
               '#dealer'    => 'What It Means to Be an Authorized Kohler Dealer',
               '#sizing'    => 'Sizing Matters — Getting the Right Kohler System for Your Home',
               '#value'     => 'Making the Investment — A Straightforward Look at Value',
+              '#faq'       => 'Frequently Asked Questions',
             ];
             $n = 1;
             foreach ($toc as $anchor => $label): ?>
@@ -205,6 +240,19 @@ echo '<script type="application/ld+json">' . json_encode($schema, JSON_UNESCAPED
                 </p>
               </address>
             </div>
+          </div>
+        </div>
+
+        <!-- FAQ -->
+        <div id="faq" class="mt-10">
+          <h2 class="font-heading text-navy text-3xl uppercase tracking-tight mb-6">Frequently Asked Questions</h2>
+          <div class="space-y-4">
+            <?php foreach ($faq_items as $item): ?>
+            <div class="border border-gray-200 rounded-xl p-6">
+              <h3 class="font-heading text-navy text-base uppercase tracking-wide mb-2"><?php echo htmlspecialchars($item['q']); ?></h3>
+              <p class="text-gray-600 text-sm leading-relaxed"><?php echo htmlspecialchars($item['a']); ?></p>
+            </div>
+            <?php endforeach; ?>
           </div>
         </div>
 

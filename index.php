@@ -14,7 +14,7 @@
  *   7. Contact CTA strip  — power-red, phone numbers
  */
 
-$page_title       = 'Electrical Services & Kohler Generator Installation in Dover, PA';
+$page_title       = 'Kohler Generator Dealer Dover, PA | Electrical Services Pennsylvania';
 $meta_description = 'GBR Electrical Services LLC — licensed electrician, certified Kohler authorized dealer, and whole-home generator specialist in Dover, PA. 40 years serving York County. Military & First Responder discounts. Call 717-467-1712.';
 
 require_once 'includes/header.php';
