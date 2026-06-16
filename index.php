@@ -593,9 +593,14 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.jpg') ? 'assets/im
           <p class="text-steel text-sm">Keep your Kohler generator covered year-round. Ask us about scheduled service plans.</p>
         </div>
       </div>
-      <a href="contact.php?service=Generator+Maintenance" class="btn-red flex-shrink-0">
-        <i class="fas fa-calendar-check" aria-hidden="true"></i> Schedule Maintenance
-      </a>
+      <div class="flex flex-wrap gap-3 flex-shrink-0">
+        <a href="generator-maintenance-plans.php" class="btn-outline-white">
+          <i class="fas fa-list-check" aria-hidden="true"></i> View Plans &amp; Pricing
+        </a>
+        <a href="contact.php?service=Generator+Maintenance" class="btn-red">
+          <i class="fas fa-calendar-check" aria-hidden="true"></i> Schedule Maintenance
+        </a>
+      </div>
     </div>
 
   </div>

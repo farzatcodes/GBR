@@ -232,10 +232,17 @@ $service_sections = [
           <?php endforeach; ?>
         </ul>
 
-        <a href="contact.php?service=<?php echo urlencode(html_entity_decode(strip_tags($sec['heading']))); ?>"
-           class="btn-red">
-          <i class="fas fa-wrench" aria-hidden="true"></i> <?php echo $sec['cta']; ?>
-        </a>
+        <div class="flex flex-wrap gap-3">
+          <a href="contact.php?service=<?php echo urlencode(html_entity_decode(strip_tags($sec['heading']))); ?>"
+             class="btn-red">
+            <i class="fas fa-wrench" aria-hidden="true"></i> <?php echo $sec['cta']; ?>
+          </a>
+          <?php if ($sec['id'] === 'generator'): ?>
+          <a href="generator-maintenance-plans.php" class="btn-outline-red">
+            <i class="fas fa-list-check" aria-hidden="true"></i> View Maintenance Plans &amp; Pricing
+          </a>
+          <?php endif; ?>
+        </div>
       </div>
 
       <!-- Sticky sidebar card -->
