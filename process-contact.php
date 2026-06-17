@@ -105,6 +105,49 @@ if (!empty($errors)) {
 
 
 /* ================================================================
+   SEO / MARKETING SOLICITATION FILTER
+   These are real people, not bots — keyword-match their pitch and
+   silently drop it (logged for review) instead of emailing it out.
+   The sender still sees a normal success message.
+   ================================================================ */
+
+$solicitation_phrases = [
+    'seo services', 'seo agency', 'seo company', 'seo audit', 'seo strategy',
+    'seo expert', 'seo specialist', 'improve your seo', 'your seo', 'for seo',
+    'search engine optimization', 'backlink', 'guest post', 'link building',
+    'digital marketing agency', 'marketing agency', 'social media marketing',
+    'social media management', 'ppc campaign', 'google ads management',
+    'increase your website traffic', 'increase organic traffic', 'organic traffic',
+    'boost your ranking', 'rank higher on google', 'rank on page 1',
+    'rank on the first page', 'page one of google', 'first page of google',
+    'website ranking', 'google ranking', 'web design services',
+    'website development services', 'content marketing', 'email marketing services',
+    'lead generation services', 'outrank your competitors', 'organic search ranking',
+    'free seo audit', 'improve your google ranking', 'website redesign services',
+];
+
+$haystack = strtolower($name . ' ' . $message);
+$is_solicitation = false;
+foreach ($solicitation_phrases as $phrase) {
+    if (str_contains($haystack, $phrase)) {
+        $is_solicitation = true;
+        break;
+    }
+}
+
+if ($is_solicitation) {
+    $log_entry = date('Y-m-d H:i:s') . ' | ' . $name . ' | ' . $phone . ' | ' . $email
+               . ' | FILTERED (solicitation): ' . substr($message, 0, 200) . "\n";
+    @file_put_contents(__DIR__ . '/spam_log.txt', $log_entry, FILE_APPEND | LOCK_EX);
+
+    redirect_with(
+        'success',
+        'Thank you, ' . $name . '! Your message has been sent. We\'ll be in touch within one business day.'
+    );
+}
+
+
+/* ================================================================
    LOAD PHPMAILER
    ================================================================ */
 

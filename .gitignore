@@ -9,3 +9,4 @@ PHPMailer/
 
 # Form submission log
 contact_log.txt
+spam_log.txt
