@@ -276,7 +276,7 @@ require_once 'includes/header.php';
                 <i class="fas fa-paper-plane" id="submit-icon" aria-hidden="true"></i>
                 <span id="submit-label">Send Message</span>
               </button>
-              <p class="text-steel text-xs mt-3 text-center">
+              <p class="text-steel-dark text-xs mt-3 text-center">
                 We respond within one business day. Your info is never shared or sold.
               </p>
             </div>

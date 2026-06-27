@@ -109,7 +109,7 @@ $articles = [
 
         <!-- Content -->
         <div class="p-7 flex flex-col flex-1">
-          <div class="flex items-center gap-3 text-steel text-xs mb-4">
+          <div class="flex items-center gap-3 text-steel-dark text-xs mb-4">
             <span><i class="fas fa-calendar text-power-red mr-1" aria-hidden="true"></i><?php echo $a['date']; ?></span>
             <span class="opacity-40">|</span>
             <span><i class="fas fa-clock text-power-red mr-1" aria-hidden="true"></i><?php echo $a['read']; ?></span>
@@ -119,7 +119,7 @@ $articles = [
             <?php echo htmlspecialchars($a['h1']); ?>
           </h2>
 
-          <p class="text-steel text-sm leading-relaxed mb-6 flex-1">
+          <p class="text-steel-dark text-sm leading-relaxed mb-6 flex-1">
             <?php echo htmlspecialchars($a['excerpt']); ?>
           </p>
 

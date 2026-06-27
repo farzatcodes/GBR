@@ -15,6 +15,7 @@ module.exports = {
         'power-red-dk': '#C70711',
         'power-red-lt': '#FD6064',
         'steel':        '#8A8A8A',
+        'steel-dark':   '#5E5E5E', // muted text on light backgrounds — steel itself fails WCAG AA contrast on white/silver-lt
         'silver':       '#F2F2F2',
         'silver-lt':    '#f0f2f5',
       },

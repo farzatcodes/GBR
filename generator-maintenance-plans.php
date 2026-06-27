@@ -184,16 +184,16 @@ $benefits = [
 
           <div class="mb-2">
             <span class="font-heading text-4xl <?php echo $p['popular'] ? 'text-white' : 'text-navy'; ?>">$<?php echo $p['price']; ?></span>
-            <span class="font-heading text-sm tracking-widest uppercase <?php echo $p['popular'] ? 'text-silver/70' : 'text-steel'; ?>"> / Year</span>
+            <span class="font-heading text-sm tracking-widest uppercase <?php echo $p['popular'] ? 'text-silver/70' : 'text-steel-dark'; ?>"> / Year</span>
           </div>
 
-          <p class="text-sm leading-relaxed mb-6 <?php echo $p['popular'] ? 'text-silver/80' : 'text-steel'; ?>">
+          <p class="text-sm leading-relaxed mb-6 <?php echo $p['popular'] ? 'text-silver/80' : 'text-steel-dark'; ?>">
             <?php echo $p['desc']; ?>
           </p>
 
           <ul class="space-y-3 mb-8 flex-1" role="list">
             <?php foreach ($p['includes'] as $inc): ?>
-            <li class="flex items-start gap-2.5 text-sm <?php echo $p['popular'] ? 'text-silver/90' : 'text-steel'; ?>">
+            <li class="flex items-start gap-2.5 text-sm <?php echo $p['popular'] ? 'text-silver/90' : 'text-steel-dark'; ?>">
               <i class="fas fa-check text-power-red mt-0.5 flex-shrink-0" aria-hidden="true"></i>
               <span><?php echo $inc; ?></span>
             </li>
@@ -205,7 +205,7 @@ $benefits = [
             Get Your Plan Today
           </a>
 
-          <p class="text-xs text-center italic <?php echo $p['popular'] ? 'text-silver/60' : 'text-steel'; ?>">
+          <p class="text-xs text-center italic <?php echo $p['popular'] ? 'text-silver/60' : 'text-steel-dark'; ?>">
             &ldquo;<?php echo $p['bottom']; ?>&rdquo;
           </p>
 

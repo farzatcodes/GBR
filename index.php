@@ -215,7 +215,7 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.jpg') ? 'assets/im
         </div>
         <div>
           <h3 class="font-heading text-navy text-xl uppercase tracking-wide mb-2"><?php echo $b['title']; ?></h3>
-          <p class="text-steel text-sm leading-relaxed"><?php echo $b['desc']; ?></p>
+          <p class="text-steel-dark text-sm leading-relaxed"><?php echo $b['desc']; ?></p>
         </div>
       </article>
       <?php endforeach; ?>
@@ -235,7 +235,7 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.jpg') ? 'assets/im
       <h2 id="services-heading" class="font-heading text-navy text-4xl sm:text-5xl uppercase tracking-tight mb-3 title-accent center">
         Our Electrical Services
       </h2>
-      <p class="text-steel max-w-2xl mx-auto mt-6 text-base leading-relaxed">
+      <p class="text-steel-dark max-w-2xl mx-auto mt-6 text-base leading-relaxed">
         From routine repairs to complete panel upgrades and whole-home Kohler generator installations — GBR Electrical has the expertise to keep your power running safely.
       </p>
     </div>
@@ -263,7 +263,7 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.jpg') ? 'assets/im
           <i class="<?php echo $svc['icon']; ?> text-power-red text-2xl" aria-hidden="true"></i>
         </div>
         <h3 class="font-heading text-navy text-xl uppercase tracking-wide mb-3"><?php echo $svc['title']; ?></h3>
-        <p class="text-steel text-sm leading-relaxed mb-5"><?php echo $svc['desc']; ?></p>
+        <p class="text-steel-dark text-sm leading-relaxed mb-5"><?php echo $svc['desc']; ?></p>
         <a href="<?php echo $svc['link']; ?>"
            class="inline-flex items-center gap-2 font-heading text-sm text-power-red tracking-wider uppercase
                   hover:gap-3 transition-all duration-200 cursor-pointer">
@@ -406,7 +406,7 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.jpg') ? 'assets/im
         </div>
         <div>
           <div class="font-heading text-white text-2xl sm:text-3xl uppercase tracking-tight">Military &amp; First Responder Discounts</div>
-          <p class="text-steel text-sm mt-1">We proudly honor those who serve. Discounts for active military, veterans, police, fire, and EMS personnel. Just ask!</p>
+          <p class="text-gray-400 text-sm mt-1">We proudly honor those who serve. Discounts for active military, veterans, police, fire, and EMS personnel. Just ask!</p>
         </div>
       </div>
       <a href="contact.php?discount=military" class="btn-outline-white flex-shrink-0">
@@ -558,7 +558,7 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.jpg') ? 'assets/im
       <h2 id="maint-heading" class="font-heading text-navy text-3xl sm:text-4xl uppercase tracking-tight title-accent center">
         Generator Maintenance &amp; Service Programs
       </h2>
-      <p class="text-steel max-w-2xl mx-auto mt-6 text-base leading-relaxed">
+      <p class="text-steel-dark max-w-2xl mx-auto mt-6 text-base leading-relaxed">
         GBR Electrical offers annual maintenance programs to keep your Kohler generator performing reliably year after year. Don't wait for a problem — schedule routine service and ensure it's ready when you need it most.
       </p>
     </div>
@@ -579,7 +579,7 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.jpg') ? 'assets/im
           <i class="<?php echo $mi['i']; ?> text-power-red text-2xl" aria-hidden="true"></i>
         </div>
         <h3 class="font-heading text-navy text-xl uppercase tracking-wide mb-3"><?php echo $mi['t']; ?></h3>
-        <p class="text-steel text-sm leading-relaxed"><?php echo $mi['d']; ?></p>
+        <p class="text-steel-dark text-sm leading-relaxed"><?php echo $mi['d']; ?></p>
       </div>
       <?php endforeach; ?>
     </div>
@@ -633,7 +633,7 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.jpg') ? 'assets/im
       ];
       foreach ($reviews as $r): ?>
       <blockquote class="bg-silver-lt border border-gray-200 p-8 flex flex-col card-lift rounded-xl">
-        <div class="flex gap-1 mb-4" aria-label="<?php echo $r['stars']; ?> out of 5 stars">
+        <div class="flex gap-1 mb-4" role="img" aria-label="<?php echo $r['stars']; ?> out of 5 stars">
           <?php for ($i = 0; $i < $r['stars']; $i++): ?>
           <i class="fas fa-star text-yellow-400 text-sm" aria-hidden="true"></i>
           <?php endfor; ?>
@@ -646,7 +646,7 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.jpg') ? 'assets/im
           </div>
           <div>
             <cite class="not-italic font-heading text-navy text-base uppercase tracking-wide block"><?php echo $r['name']; ?></cite>
-            <span class="text-steel text-xs"><?php echo $r['loc']; ?></span>
+            <span class="text-steel-dark text-xs"><?php echo $r['loc']; ?></span>
           </div>
         </footer>
       </blockquote>

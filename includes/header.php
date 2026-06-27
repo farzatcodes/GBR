@@ -179,7 +179,7 @@ $default_desc = 'GBR Electrical Services LLC – Licensed electrical contractor 
 <!-- ================================================================
      ANNOUNCEMENT BAR — military discounts + 40 years
      ================================================================ -->
-<div class="bg-power-red text-white text-center py-2 px-4" role="complementary" aria-label="Special offers and announcements">
+<div class="bg-power-red-dk text-white text-center py-2 px-4" role="complementary" aria-label="Special offers and announcements">
   <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-x-6 gap-y-1 text-xs font-heading tracking-wider uppercase">
     <span class="flex items-center gap-1.5">
       <i class="fas fa-medal" aria-hidden="true"></i>
