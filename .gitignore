@@ -10,3 +10,6 @@ PHPMailer/
 # Form submission log
 contact_log.txt
 spam_log.txt
+
+# Node deps for the Tailwind CSS build (run `npm run build:css` to regenerate)
+node_modules/

@@ -140,34 +140,8 @@ $default_desc = 'GBR Electrical Services LLC – Licensed electrical contractor 
   }
   </script>
 
-  <!-- Tailwind CDN + brand colour config -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'navy':         '#1F1F1F',
-            'navy-light':   '#181818',
-            'navy-mid':     '#242424',
-            'navy-card':    '#2a2a2a',
-            'power-red':    '#FC0D15',
-            'power-red-dk': '#C70711',
-            'power-red-lt': '#FD6064',
-            'steel':        '#8A8A8A',
-            'silver':       '#F2F2F2',
-            'silver-lt':    '#f0f2f5',
-          },
-          fontFamily: {
-            'heading': ['Barlow Condensed','Impact','Arial Narrow','sans-serif'],
-            'body':    ['Inter','system-ui','sans-serif'],
-          },
-          minHeight: { '11':'2.75rem','12':'3rem','13':'3.25rem' },
-          height:    { '11':'2.75rem','12':'3rem','13':'3.25rem','18':'4.5rem' },
-        },
-      },
-    };
-  </script>
+  <!-- Tailwind CSS — locally built & minified (see package.json build:css) -->
+  <link rel="stylesheet" href="assets/css/tailwind.css">
 
   <!-- Google Fonts: Barlow Condensed (headings) + Inter (body) — font-display:swap -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -177,100 +151,6 @@ $default_desc = 'GBR Electrical Services LLC – Licensed electrical contractor 
   <!-- Font Awesome 6 SVG icons (no emoji as icons — ui-ux-pro-max rule) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
 
-  <style>
-    /* ── Base ── */
-    *, *::before, *::after { box-sizing:border-box; }
-    html  { scroll-behavior:smooth; }
-    body  { font-family:'Inter',system-ui,sans-serif; background:#fff; color:#1a1a1a; }
-    h1,h2,h3,h4,h5,h6 { font-family:'Barlow Condensed',Impact,sans-serif; font-weight:800; line-height:1.05; }
-
-    /* ── Respect reduced-motion ── */
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation-duration:.01ms !important; transition-duration:.01ms !important; }
-    }
-
-    /* ── Section title accent bar ── */
-    .title-accent::after {
-      content:''; display:block; width:52px; height:4px;
-      background:#FC0D15; border-radius:2px; margin-top:10px;
-    }
-    .title-accent.center::after { margin-left:auto; margin-right:auto; }
-
-    /* ── Buttons (min-height 44px for touch targets, rounded corners) ── */
-    .btn-red {
-      display:inline-flex; align-items:center; justify-content:center; gap:8px;
-      min-height:44px;
-      background:linear-gradient(180deg,#FD6064 0%,#FC0D15 25%,#F82C34 60%,#C70711 100%);
-      color:#fff;
-      font-family:'Barlow Condensed',sans-serif; font-size:1rem; font-weight:700;
-      letter-spacing:.1em; text-transform:uppercase;
-      padding:12px 28px;
-      border:2px solid #FC0D15;
-      border-radius:8px;
-      text-decoration:none; cursor:pointer;
-      transition:filter .22s ease, box-shadow .22s ease, transform .18s ease;
-    }
-    .btn-red:hover {
-      filter:brightness(1.12);
-      box-shadow:0 8px 28px rgba(252,13,21,.42);
-      transform:translateY(-2px);
-    }
-    .btn-red:focus-visible {
-      outline:3px solid #fff; outline-offset:3px;
-    }
-    .btn-outline-white {
-      display:inline-flex; align-items:center; justify-content:center; gap:8px;
-      min-height:44px;
-      background:transparent; color:#fff;
-      font-family:'Barlow Condensed',sans-serif; font-size:1rem; font-weight:700;
-      letter-spacing:.1em; text-transform:uppercase;
-      padding:12px 28px;
-      border:2px solid rgba(255,255,255,.5);
-      border-radius:8px;
-      text-decoration:none; cursor:pointer;
-      transition:background .22s ease, border-color .22s ease;
-    }
-    .btn-outline-white:hover { background:rgba(255,255,255,.1); border-color:#fff; }
-    .btn-outline-white:focus-visible { outline:3px solid #FC0D15; outline-offset:3px; }
-    .btn-outline-red {
-      display:inline-flex; align-items:center; justify-content:center; gap:8px;
-      min-height:44px;
-      background:transparent; color:#FC0D15;
-      font-family:'Barlow Condensed',sans-serif; font-size:1rem; font-weight:700;
-      letter-spacing:.1em; text-transform:uppercase;
-      padding:12px 28px;
-      border:2px solid #FC0D15;
-      border-radius:8px;
-      text-decoration:none; cursor:pointer;
-      transition:background .22s ease, color .22s ease;
-    }
-    .btn-outline-red:hover  { background:#FC0D15; color:#fff; }
-    .btn-outline-red:focus-visible { outline:3px solid #1F1F1F; outline-offset:3px; }
-
-    /* ── Card lift ── */
-    .card-lift { transition:transform .25s ease, box-shadow .25s ease; }
-    .card-lift:hover { transform:translateY(-5px); box-shadow:0 20px 40px rgba(0,0,0,.12); }
-
-    /* ── Dot grid background ── */
-    .dot-grid {
-      background-image:radial-gradient(circle, rgba(255,255,255,.055) 1px, transparent 1px);
-      background-size:28px 28px;
-    }
-
-    /* ── Mobile nav slide ── */
-    #mobile-nav { max-height:0; overflow:hidden; transition:max-height .35s ease; }
-    #mobile-nav.open { max-height:680px; }
-
-    /* ── Focus rings for non-button elements ── */
-    a:focus-visible, button:focus-visible, [role="button"]:focus-visible {
-      outline:3px solid #FC0D15; outline-offset:2px;
-    }
-
-    /* ── Input focus ── */
-    input:focus-visible, textarea:focus-visible, select:focus-visible {
-      outline:2px solid #FC0D15; outline-offset:0;
-    }
-  </style>
 </head>
 <body>
 
