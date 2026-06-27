@@ -143,13 +143,22 @@ $default_desc = 'GBR Electrical Services LLC – Licensed electrical contractor 
   <!-- Tailwind CSS — locally built & minified (see package.json build:css) -->
   <link rel="stylesheet" href="assets/css/tailwind.css">
 
-  <!-- Google Fonts: Barlow Condensed (headings) + Inter (body) — font-display:swap -->
+  <!-- Google Fonts: Barlow Condensed (headings) + Inter (body) — font-display:swap.
+       Loaded async (media=print swapped to all on load) so this 3rd-party
+       stylesheet doesn't block initial render; font-display:swap already
+       handles the fallback-to-webfont swap with no layout shift. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;1,700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
 
-  <!-- Font Awesome 6 SVG icons (no emoji as icons — ui-ux-pro-max rule) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+  <!-- Font Awesome 6 SVG icons (no emoji as icons — ui-ux-pro-max rule).
+       Loaded async — the full icon set is ~150KB of font data for a
+       handful of decorative glyphs and isn't needed for first paint. -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        crossorigin="anonymous" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous"></noscript>
 
 </head>
 <body>
