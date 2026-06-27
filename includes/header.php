@@ -37,6 +37,12 @@ $default_desc = 'GBR Electrical Services LLC – Licensed electrical contractor 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <?php if (isset($hero_bg) && $hero_bg): ?>
+  <!-- Preload the LCP hero image so it starts downloading before the
+       page body (and the <img> tag itself) is even parsed -->
+  <link rel="preload" as="image" href="<?php echo htmlspecialchars($hero_bg); ?>" fetchpriority="high">
+  <?php endif; ?>
+
   <!-- Favicon -->
   <link rel="icon"             type="image/x-icon" href="/favicon.ico">
   <link rel="shortcut icon"    type="image/x-icon" href="/favicon.ico">

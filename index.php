@@ -17,6 +17,10 @@
 $page_title       = 'Kohler Generator Dealer Dover, PA | Electrical Services Pennsylvania';
 $meta_description = 'GBR Electrical Services LLC — licensed electrician, certified Kohler authorized dealer, and whole-home generator specialist in Dover, PA. 40 years serving York County. Military & First Responder discounts. Call 717-467-1712.';
 
+/* Computed before the header include so header.php can preload it as the LCP resource */
+$hero_bg = file_exists('assets/images/hero-bg.webp') ? 'assets/images/hero-bg.webp'
+         : (file_exists('assets/images/hero-bg.jpg') ? 'assets/images/hero-bg.jpg' : null);
+
 require_once 'includes/header.php';
 
 /* Stock images — download these to assets/images/ from Unsplash (free):
@@ -24,8 +28,6 @@ require_once 'includes/header.php';
    generator.jpg         : unsplash.com/photos/white-electric-power-generator-VuR4oHZ3ucc
    electrician-wiring.jpg: unsplash.com/photos/electrician-is-working-on-electrical-wiring-Z8kjh-BlSgM
 */
-$hero_bg      = file_exists('assets/images/hero-bg.webp') ? 'assets/images/hero-bg.webp'
-              : (file_exists('assets/images/hero-bg.jpg') ? 'assets/images/hero-bg.jpg' : null);
 $img_panel    = file_exists('assets/images/electrician-panel.jpg')  ? 'assets/images/electrician-panel.jpg'  : null;
 $img_gen      = file_exists('assets/images/generator.jpg')          ? 'assets/images/generator.jpg'          : null;
 $img_wiring   = file_exists('assets/images/electrician-wiring.jpg') ? 'assets/images/electrician-wiring.jpg' : null;
