@@ -11,6 +11,7 @@
  *   5. Generator spotlight — Kohler authorized dealer, whole-home focus
  *   5b. Generator Maintenance Programs
  *   6. Testimonials       — 3 placeholder reviews
+ *   6b. FAQ                — FAQPage schema + visible Q&amp;A
  *   7. Contact CTA strip  — power-red, phone numbers
  */
 
@@ -670,6 +671,79 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.webp') ? 'assets/i
 
   </div>
 </section>
+
+
+<!-- ================================================================
+     6b. FAQ — visible Q&A + FAQPage schema (rich-snippet eligible)
+     ================================================================ -->
+<?php
+$faqs = [
+  [
+    'q' => 'Is GBR Electrical Services licensed and insured?',
+    'a' => 'Yes. GBR Electrical Services, LLC is a fully licensed and insured electrical contractor serving Dover, PA and all of York County.',
+  ],
+  [
+    'q' => 'Is GBR an authorized Kohler generator dealer?',
+    'a' => 'Yes. GBR is an authorized Kohler generator dealer (Dealer #1506430), specializing in whole-home standby generator sizing, installation, and maintenance.',
+  ],
+  [
+    'q' => 'Do you offer free estimates?',
+    'a' => 'Yes. We provide free, no-obligation estimates for generator installation and electrical work — call 717-467-1712 or request one online.',
+  ],
+  [
+    'q' => 'Do you offer military or first responder discounts?',
+    'a' => 'Yes. GBR offers discounts for military service members and first responders — just mention it when you request your estimate.',
+  ],
+  [
+    'q' => 'What areas do you serve?',
+    'a' => 'We serve Dover, York, Dillsburg, Mechanicsburg, Red Lion, Spring Grove, Hanover, Manchester, New Cumberland, Lewisberry, Wrightsville, East Berlin, Camp Hill, Etters, and all of York County, PA.',
+  ],
+  [
+    'q' => 'Do you provide 24/7 emergency electrical service?',
+    'a' => 'Yes. For urgent electrical issues or generator emergencies, call our 24/7 line at 717-515-1504.',
+  ],
+];
+?>
+<section class="bg-silver-lt py-20" id="faq" aria-labelledby="faq-heading">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6">
+
+    <div class="text-center mb-14">
+      <p class="font-heading text-power-red-dk text-sm tracking-widest uppercase mb-3">Common Questions</p>
+      <h2 id="faq-heading" class="font-heading text-navy text-4xl sm:text-5xl uppercase tracking-tight title-accent center">
+        Frequently Asked Questions
+      </h2>
+    </div>
+
+    <div class="space-y-4">
+      <?php foreach ($faqs as $f): ?>
+      <div class="bg-white border border-gray-200 p-6 rounded-xl">
+        <h3 class="font-heading text-navy text-lg uppercase tracking-wide mb-2"><?php echo $f['q']; ?></h3>
+        <p class="text-gray-600 text-sm leading-relaxed"><?php echo $f['a']; ?></p>
+      </div>
+      <?php endforeach; ?>
+    </div>
+
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    <?php foreach ($faqs as $i => $f): ?>
+    {
+      "@type": "Question",
+      "name": "<?php echo htmlspecialchars($f['q'], ENT_QUOTES); ?>",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "<?php echo htmlspecialchars($f['a'], ENT_QUOTES); ?>"
+      }
+    }<?php echo $i < count($faqs) - 1 ? ',' : ''; ?>
+    <?php endforeach; ?>
+  ]
+}
+</script>
 
 
 <!-- ================================================================
