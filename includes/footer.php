@@ -53,7 +53,7 @@ $logo_src = file_exists(__DIR__ . '/../assets/images/logo.webp')
           <img src="<?php echo $keystone_badge; ?>"
                alt="Member of Keystone B Collective"
                class="h-10 w-auto object-contain drop-shadow-lg"
-               loading="lazy">
+               loading="lazy" width="629" height="69">
         </a>
         <?php endif; ?>
       </div>
