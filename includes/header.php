@@ -193,25 +193,13 @@ $default_desc = 'GBR Electrical Services LLC – Licensed electrical contractor 
         rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
 
-  <!-- Font Awesome 6 SVG icons (no emoji as icons — ui-ux-pro-max rule).
-       Loaded async — the full icon set is ~150KB of font data for a
-       handful of decorative glyphs and isn't needed for first paint. -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        crossorigin="anonymous" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous"></noscript>
-
-  <!-- Override Font Awesome's @font-face to use font-display:swap — the CDN's
-       own stylesheet ships font-display:auto/block, which can briefly hide
-       icon glyphs while the woff2 loads. Same src URL, so no extra request. -->
-  <style>
-  @font-face {
-    font-family: "Font Awesome 6 Free";
-    font-style: normal;
-    font-weight: 900;
-    font-display: swap;
-    src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-solid-900.woff2") format("woff2");
-  }
-  </style>
+  <!-- Font Awesome icons — self-hosted, pruned subset (no emoji as icons —
+       ui-ux-pro-max rule). Only the ~48 solid glyphs actually used on this
+       site, instead of the CDN's full ~100KB icon library, plus
+       font-display:swap so glyphs never block render. Loaded async. -->
+  <link rel="stylesheet" href="assets/css/fontawesome-subset.css"
+        media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="assets/css/fontawesome-subset.css"></noscript>
 
 </head>
 <body>
