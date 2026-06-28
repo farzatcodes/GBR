@@ -33,14 +33,23 @@
 <IfModule LiteSpeed>
     CacheLookup on
 
-    # Cache all GET pages publicly. TTL falls back to the server's
-    # configured default cache policy (set in WHM/cPanel) unless a page
-    # sends its own Cache-Control header.
+    # Cache GET pages publicly. The mod_headers rule below sends an explicit
+    # short Cache-Control on every .php response, which LiteSpeed honors as
+    # the page's TTL instead of falling back to the server-wide default.
     CacheEnable public /
 
-    # Never cache the contact form handler — it sends email and must run fresh
+    # Never cache the contact form handler or page — they must run fresh
     # on every request.
-    <FilesMatch "^process-contact\.php$">
+    <FilesMatch "^(process-contact|contact)\.php$">
         CacheLookup off
+    </FilesMatch>
+</IfModule>
+
+# Keep HTML/PHP responses short-lived (5 minutes) instead of relying on the
+# server's unbounded default cache policy, so pages revalidate frequently
+# and don't risk serving stale or mismatched content.
+<IfModule mod_headers.c>
+    <FilesMatch "\.php$">
+        Header set Cache-Control "public, max-age=300, must-revalidate"
     </FilesMatch>
 </IfModule>
