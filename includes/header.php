@@ -195,8 +195,10 @@ $default_desc = 'GBR Electrical Services LLC – Licensed electrical contractor 
 
   <!-- Font Awesome icons — self-hosted, pruned subset (no emoji as icons —
        ui-ux-pro-max rule). Only the ~48 solid glyphs actually used on this
-       site, instead of the CDN's full ~100KB icon library, plus
-       font-display:swap so glyphs never block render. Loaded async. -->
+       site, instead of the CDN's full ~100KB icon library. font-display:
+       optional (not swap) since these are decorative — this skips the
+       layout-shifting font swap entirely instead of trading it for a
+       forced reflow when the webfont finishes loading. Loaded async. -->
   <link rel="stylesheet" href="assets/css/fontawesome-subset.css"
         media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="assets/css/fontawesome-subset.css"></noscript>
