@@ -10,6 +10,15 @@ require_once 'includes/header.php';
 
 $articles = [
   [
+    'href'    => 'ev-charger-installation-pennsylvania.php',
+    'date'    => 'June 28, 2026',
+    'cat'     => 'EV Charger Installation',
+    'h1'      => 'EV Charger Installation in PA — Panel Capacity, Permits & Wiring',
+    'excerpt' => 'Thinking about a home EV charger? GBR Electrical explains what a Level 2 charger install involves, how to know if your panel has capacity, and what permits Pennsylvania requires.',
+    'read'    => '7 min read',
+    'icon'    => 'fas fa-plug-circle-bolt',
+  ],
+  [
     'href'    => 'kohler-generator-dealer-pennsylvania.php',
     'date'    => 'June 16, 2026',
     'cat'     => 'Kohler Generators',
@@ -128,7 +137,7 @@ $articles = [
           </p>
 
           <a href="<?php echo $a['href']; ?>"
-             class="inline-flex items-center gap-2 font-heading text-sm text-power-red tracking-wider uppercase
+             class="inline-flex items-center gap-2 font-heading text-sm text-power-red-dk tracking-wider uppercase
                     hover:gap-3 transition-all duration-200 cursor-pointer">
             Read Article <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
           </a>

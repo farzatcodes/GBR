@@ -60,6 +60,11 @@ $area_links = [
 
 $resource_links = [
   [
+    'href' => 'ev-charger-installation-pennsylvania.php',
+    'cat'  => 'EV Charger Installation',
+    'h2'   => 'EV Charger Installation in PA — Panel Capacity, Permits & Wiring',
+  ],
+  [
     'href' => 'kohler-generator-dealer-pennsylvania.php',
     'cat'  => 'Kohler Generators',
     'h2'   => 'Kohler Generator Dealer in PA — What Homeowners Should Know',
