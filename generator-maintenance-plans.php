@@ -91,7 +91,8 @@ $benefits = [
 
   <?php if ($hero_bg): ?>
   <div class="absolute inset-0" aria-hidden="true">
-    <img src="<?php echo $hero_bg; ?>" alt="" class="w-full h-full object-cover object-center" loading="eager">
+    <img src="<?php echo $hero_bg; ?>" alt="" class="w-full h-full object-cover object-center" loading="eager"
+         width="1920" height="1080">
     <div class="absolute inset-0 bg-navy/85"></div>
   </div>
   <?php endif; ?>

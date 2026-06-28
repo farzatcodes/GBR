@@ -46,7 +46,8 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.jpg') ? 'assets/im
   <?php if ($hero_bg): ?>
   <div class="absolute inset-0" aria-hidden="true">
     <img src="<?php echo $hero_bg; ?>" alt=""
-         class="w-full h-full object-cover object-center" loading="eager" fetchpriority="high">
+         class="w-full h-full object-cover object-center" loading="eager" fetchpriority="high"
+         width="1920" height="1080">
     <div class="absolute inset-0 bg-navy/80"></div>
   </div>
   <?php endif; ?>

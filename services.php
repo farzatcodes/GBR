@@ -138,7 +138,8 @@ $service_sections = [
   <?php if (file_exists('assets/images/hero-services.jpg')): ?>
   <div class="absolute inset-0" aria-hidden="true">
     <img src="assets/images/hero-services.jpg" alt=""
-         class="w-full h-full object-cover object-center" loading="eager">
+         class="w-full h-full object-cover object-center" loading="eager"
+         width="1920" height="1080">
     <div class="absolute inset-0 bg-navy/80"></div>
   </div>
   <?php endif; ?>
