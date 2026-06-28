@@ -160,7 +160,7 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.jpg') ? 'assets/im
               ];
               foreach ($checks as $c): ?>
               <li class="flex items-center justify-between">
-                <span class="text-steel text-sm"><?php echo $c; ?></span>
+                <span class="text-gray-400 text-sm"><?php echo $c; ?></span>
                 <i class="fas fa-check text-power-red text-xs ml-4 flex-shrink-0" aria-hidden="true"></i>
               </li>
               <?php endforeach; ?>
@@ -269,6 +269,7 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.jpg') ? 'assets/im
         <h3 class="font-heading text-navy text-xl uppercase tracking-wide mb-3"><?php echo $svc['title']; ?></h3>
         <p class="text-steel-dark text-sm leading-relaxed mb-5"><?php echo $svc['desc']; ?></p>
         <a href="<?php echo $svc['link']; ?>"
+           aria-label="Learn more about <?php echo strip_tags($svc['title']); ?>"
            class="inline-flex items-center gap-2 font-heading text-sm text-power-red tracking-wider uppercase
                   hover:gap-3 transition-all duration-200 cursor-pointer">
           Learn More <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
@@ -368,7 +369,7 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.jpg') ? 'assets/im
           <div class="text-center">
             <i class="fas fa-bolt text-power-red text-4xl mb-3 block" aria-hidden="true"></i>
             <div class="font-heading text-white text-xl uppercase tracking-wide">Licensed Professionals</div>
-            <div class="text-steel text-sm mt-1">York County, PA — 40 Years in Business</div>
+            <div class="text-gray-400 text-sm mt-1">York County, PA — 40 Years in Business</div>
           </div>
         </div>
         <?php endif; ?>
@@ -387,7 +388,7 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.jpg') ? 'assets/im
                       transition-colors card-lift cursor-default rounded-xl" role="listitem">
             <i class="<?php echo $c['i']; ?> text-power-red text-xl mb-3 block" aria-hidden="true"></i>
             <div class="font-heading text-white text-2xl uppercase tracking-wide mb-1"><?php echo $c['v']; ?></div>
-            <div class="text-steel text-xs uppercase tracking-widest"><?php echo $c['l']; ?></div>
+            <div class="text-gray-400 text-xs uppercase tracking-widest"><?php echo $c['l']; ?></div>
           </div>
           <?php endforeach; ?>
         </div>
