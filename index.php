@@ -21,6 +21,9 @@ $meta_description = 'GBR Electrical Services LLC — licensed electrician, certi
 $hero_bg = file_exists('assets/images/hero-bg.webp') ? 'assets/images/hero-bg.webp'
          : (file_exists('assets/images/hero-bg.jpg') ? 'assets/images/hero-bg.jpg' : null);
 
+/* Inline tailwind.css on the homepage to remove it from the critical request chain */
+$inline_css = true;
+
 require_once 'includes/header.php';
 
 /* Stock images — download these to assets/images/ from Unsplash (free):

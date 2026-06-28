@@ -168,8 +168,20 @@ $default_desc = 'GBR Electrical Services LLC – Licensed electrical contractor 
   </script>
   <?php endif; ?>
 
+  <?php
+  /* Inline the compiled Tailwind CSS directly into <head> when requested
+     (set $inline_css = true before including this file) — removes the
+     separate stylesheet request from the critical path. Other pages keep
+     the external, cacheable <link> by default. */
+  $tailwind_css_path = __DIR__ . '/../assets/css/tailwind.css';
+  if (!empty($inline_css) && file_exists($tailwind_css_path)):
+  ?>
+  <!-- Tailwind CSS — inlined to eliminate the render-blocking request chain -->
+  <style><?php echo file_get_contents($tailwind_css_path); ?></style>
+  <?php else: ?>
   <!-- Tailwind CSS — locally built & minified (see package.json build:css) -->
   <link rel="stylesheet" href="assets/css/tailwind.css">
+  <?php endif; ?>
 
   <!-- Google Fonts: Barlow Condensed (headings) + Inter (body) — font-display:swap.
        Loaded async (media=print swapped to all on load) so this 3rd-party
