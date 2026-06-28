@@ -16,12 +16,31 @@
     ExpiresByType application/javascript  "access plus 1 year"
     ExpiresByType image/png               "access plus 1 year"
     ExpiresByType image/jpeg              "access plus 1 year"
+    ExpiresByType image/webp              "access plus 1 year"
     ExpiresByType image/svg+xml           "access plus 1 year"
     ExpiresByType image/x-icon            "access plus 1 year"
     ExpiresByType font/woff2              "access plus 1 year"
 </IfModule>
 <IfModule mod_headers.c>
-    <FilesMatch "\.(css|js|png|jpe?g|svg|ico|woff2?)$">
+    <FilesMatch "\.(css|js|png|jpe?g|webp|svg|ico|woff2?)$">
         Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+</IfModule>
+
+# LiteSpeed Cache (LSCache) — page-level cache for the LiteSpeed web server.
+# Works even without the cPanel "LiteSpeed Web Cache Manager" plugin, since
+# LSWS reads these directives directly from .htaccess.
+<IfModule LiteSpeed>
+    CacheLookup on
+
+    # Cache all GET pages publicly. TTL falls back to the server's
+    # configured default cache policy (set in WHM/cPanel) unless a page
+    # sends its own Cache-Control header.
+    CacheEnable public /
+
+    # Never cache the contact form handler — it sends email and must run fresh
+    # on every request.
+    <FilesMatch "^process-contact\.php$">
+        CacheLookup off
     </FilesMatch>
 </IfModule>
