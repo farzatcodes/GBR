@@ -269,10 +269,9 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.jpg') ? 'assets/im
         <h3 class="font-heading text-navy text-xl uppercase tracking-wide mb-3"><?php echo $svc['title']; ?></h3>
         <p class="text-steel-dark text-sm leading-relaxed mb-5"><?php echo $svc['desc']; ?></p>
         <a href="<?php echo $svc['link']; ?>"
-           aria-label="Learn more about <?php echo strip_tags($svc['title']); ?>"
            class="inline-flex items-center gap-2 font-heading text-sm text-power-red tracking-wider uppercase
                   hover:gap-3 transition-all duration-200 cursor-pointer">
-          Learn More <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
+          <?php echo strip_tags($svc['title']); ?> Details <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
         </a>
       </article>
       <?php endforeach; ?>
