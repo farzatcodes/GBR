@@ -169,7 +169,7 @@ echo '<script type="application/ld+json">' . json_encode($schema, JSON_UNESCAPED
         </div>
 
         <!-- Inline CTA -->
-        <div class="bg-power-red rounded-xl p-8 text-center mb-10">
+        <div class="bg-power-red-dk rounded-xl p-8 text-center mb-10">
           <h3 class="font-heading text-white text-2xl uppercase tracking-wide mb-3">Schedule Your Free Consultation</h3>
           <p class="text-red-100 text-sm mb-6">GBR Electrical — licensed contractor and Kohler authorized dealer in Dover, PA. Serving York County for 40+ years.</p>
           <div class="flex flex-wrap justify-center gap-4">

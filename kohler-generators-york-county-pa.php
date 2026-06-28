@@ -213,7 +213,7 @@ echo '<script type="application/ld+json">' . json_encode($faq_schema, JSON_UNESC
         </div>
 
         <!-- Inline CTA -->
-        <div class="bg-power-red rounded-xl p-8 text-center mb-10">
+        <div class="bg-power-red-dk rounded-xl p-8 text-center mb-10">
           <h3 class="font-heading text-white text-2xl uppercase tracking-wide mb-3">Get Your Free Kohler Quote</h3>
           <p class="text-red-100 text-sm mb-6">GBR Electrical — York County's authorized Kohler generator dealer and installer. No pressure, honest pricing.</p>
           <div class="flex flex-wrap justify-center gap-4">

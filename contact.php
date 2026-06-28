@@ -391,7 +391,7 @@ require_once 'includes/header.php';
         </div>
 
         <!-- Quick-call card -->
-        <div class="bg-power-red p-6 text-center">
+        <div class="bg-power-red-dk p-6 text-center">
           <i class="fas fa-phone text-white/70 text-3xl mb-3 block" aria-hidden="true"></i>
           <div class="font-heading text-white text-lg uppercase tracking-wide mb-1">Prefer to Call?</div>
           <p class="text-red-100 text-sm mb-4">Skip the form — we love talking with customers directly.</p>

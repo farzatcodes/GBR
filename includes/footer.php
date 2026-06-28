@@ -137,7 +137,7 @@ $logo_src = file_exists(__DIR__ . '/../assets/images/logo.webp')
           <div>
             <div class="font-heading text-white text-xs tracking-widest uppercase mb-0.5">24/7 Emergency</div>
             <a href="tel:7175151504"
-               class="text-power-red text-sm font-semibold hover:text-red-400 transition-colors cursor-pointer">
+               class="text-power-red-lt text-sm font-semibold hover:text-red-400 transition-colors cursor-pointer">
               Call: 717-515-1504
             </a>
           </div>

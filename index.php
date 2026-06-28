@@ -242,7 +242,7 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.webp') ? 'assets/i
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
     <div class="text-center mb-14">
-      <p class="font-heading text-power-red text-sm tracking-widest uppercase mb-3">What We Do</p>
+      <p class="font-heading text-power-red-dk text-sm tracking-widest uppercase mb-3">What We Do</p>
       <h2 id="services-heading" class="font-heading text-navy text-4xl sm:text-5xl uppercase tracking-tight mb-3 title-accent center">
         Our Electrical Services
       </h2>
@@ -276,7 +276,7 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.webp') ? 'assets/i
         <h3 class="font-heading text-navy text-xl uppercase tracking-wide mb-3"><?php echo $svc['title']; ?></h3>
         <p class="text-steel-dark text-sm leading-relaxed mb-5"><?php echo $svc['desc']; ?></p>
         <a href="<?php echo $svc['link']; ?>"
-           class="inline-flex items-center gap-2 font-heading text-sm text-power-red tracking-wider uppercase
+           class="inline-flex items-center gap-2 font-heading text-sm text-power-red-dk tracking-wider uppercase
                   hover:gap-3 transition-all duration-200 cursor-pointer">
           <?php echo strip_tags($svc['title']); ?> Details <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
         </a>
@@ -322,7 +322,7 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.webp') ? 'assets/i
 
       <!-- Left: Story -->
       <div>
-        <p class="font-heading text-power-red text-sm tracking-widest uppercase mb-3">Who We Are</p>
+        <p class="font-heading text-power-red-lt text-sm tracking-widest uppercase mb-3">Who We Are</p>
         <h2 id="about-heading" class="font-heading text-white text-4xl sm:text-5xl uppercase tracking-tight mb-6 title-accent">
           Serving the Community<br>for 40 Years.
         </h2>
@@ -444,7 +444,7 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.webp') ? 'assets/i
            role="banner" aria-label="Kohler Authorized Dealer">
         <i class="fas fa-certificate text-power-red text-2xl" aria-hidden="true"></i>
         <div>
-          <div class="font-heading text-power-red text-xs tracking-widest uppercase">Kohler Authorized Dealer &amp; Installer</div>
+          <div class="font-heading text-power-red-lt text-xs tracking-widest uppercase">Kohler Authorized Dealer &amp; Installer</div>
           <div class="font-heading text-white text-lg uppercase tracking-wide">York County's Kohler Generator Specialist</div>
           <div class="font-heading text-steel text-xs tracking-widest uppercase mt-0.5">Dealer #1506430</div>
         </div>
@@ -455,7 +455,7 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.webp') ? 'assets/i
 
       <!-- Left: Content -->
       <div>
-        <p class="font-heading text-power-red text-sm tracking-widest uppercase mb-3">Our #1 Specialty</p>
+        <p class="font-heading text-power-red-dk text-sm tracking-widest uppercase mb-3">Our #1 Specialty</p>
         <h2 id="gen-heading" class="font-heading text-navy text-4xl sm:text-5xl uppercase tracking-tight mb-6 title-accent">
           Never Lose Power<br>Again.
         </h2>
@@ -540,7 +540,7 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.webp') ? 'assets/i
         </div>
 
         <!-- Urgency card -->
-        <div class="bg-power-red p-7 flex items-start gap-5 rounded-xl">
+        <div class="bg-power-red-dk p-7 flex items-start gap-5 rounded-xl">
           <i class="fas fa-triangle-exclamation text-white/75 text-3xl flex-shrink-0 mt-1" aria-hidden="true"></i>
           <div>
             <div class="font-heading text-white text-xl uppercase tracking-wide mb-2">Don't Wait for the Next Outage</div>
@@ -548,7 +548,7 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.webp') ? 'assets/i
               Protect your sump pump, medical equipment, and family comfort before the next storm rolls through York County.
             </p>
             <a href="contact.php?service=Generator+Installation+(Kohler)"
-               class="inline-flex items-center gap-2 bg-white text-power-red font-heading text-sm
+               class="inline-flex items-center gap-2 bg-white text-power-red-dk font-heading text-sm
                       uppercase tracking-widest px-5 min-h-[44px] py-2.5 hover:bg-silver-lt
                       transition-colors cursor-pointer rounded-lg">
               <i class="fas fa-calendar-check" aria-hidden="true"></i> Schedule Consultation
@@ -569,7 +569,7 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.webp') ? 'assets/i
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
     <div class="text-center mb-12">
-      <p class="font-heading text-power-red text-sm tracking-widest uppercase mb-3">Protect Your Investment</p>
+      <p class="font-heading text-power-red-dk text-sm tracking-widest uppercase mb-3">Protect Your Investment</p>
       <h2 id="maint-heading" class="font-heading text-navy text-3xl sm:text-4xl uppercase tracking-tight title-accent center">
         Generator Maintenance &amp; Service Programs
       </h2>
@@ -630,7 +630,7 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.webp') ? 'assets/i
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
     <div class="text-center mb-14">
-      <p class="font-heading text-power-red text-sm tracking-widest uppercase mb-3">Customer Reviews</p>
+      <p class="font-heading text-power-red-dk text-sm tracking-widest uppercase mb-3">Customer Reviews</p>
       <h2 id="test-heading" class="font-heading text-navy text-4xl sm:text-5xl uppercase tracking-tight title-accent center">
         Trusted by York County Homeowners
       </h2>
@@ -675,7 +675,7 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.webp') ? 'assets/i
 <!-- ================================================================
      7. CONTACT CTA STRIP — power-red, bold phone numbers
      ================================================================ -->
-<section class="bg-power-red py-16" aria-label="Contact call to action">
+<section class="bg-power-red-dk py-16" aria-label="Contact call to action">
   <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center">
 
     <h2 class="font-heading text-white text-4xl sm:text-5xl uppercase tracking-tight mb-3">
@@ -691,7 +691,7 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.webp') ? 'assets/i
                 min-h-[54px] px-6 py-3 text-white transition-colors cursor-pointer rounded-lg">
         <i class="fas fa-phone text-xl" aria-hidden="true"></i>
         <div class="text-left">
-          <div class="text-xs text-red-200 uppercase tracking-widest font-heading">Office</div>
+          <div class="text-xs text-silver uppercase tracking-widest font-heading">Office</div>
           <div class="font-heading text-xl tracking-wide">717-467-1712</div>
         </div>
       </a>
@@ -700,14 +700,14 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.webp') ? 'assets/i
                 min-h-[54px] px-6 py-3 text-white transition-colors cursor-pointer rounded-lg">
         <i class="fas fa-mobile-alt text-xl" aria-hidden="true"></i>
         <div class="text-left">
-          <div class="text-xs text-red-200 uppercase tracking-widest font-heading">Cell / Emergency</div>
+          <div class="text-xs text-silver uppercase tracking-widest font-heading">Cell / Emergency</div>
           <div class="font-heading text-xl tracking-wide">717-515-1504</div>
         </div>
       </a>
     </div>
 
     <a href="contact.php"
-       class="inline-flex items-center gap-2 bg-white text-power-red font-heading text-base
+       class="inline-flex items-center gap-2 bg-white text-power-red-dk font-heading text-base
               tracking-widest uppercase px-10 min-h-[52px] py-4 hover:bg-silver-lt
               transition-colors cursor-pointer shadow-lg rounded-xl">
       <i class="fas fa-paper-plane" aria-hidden="true"></i> Send Us a Message
