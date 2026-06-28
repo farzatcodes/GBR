@@ -200,6 +200,19 @@ $default_desc = 'GBR Electrical Services LLC – Licensed electrical contractor 
         crossorigin="anonymous" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous"></noscript>
 
+  <!-- Override Font Awesome's @font-face to use font-display:swap — the CDN's
+       own stylesheet ships font-display:auto/block, which can briefly hide
+       icon glyphs while the woff2 loads. Same src URL, so no extra request. -->
+  <style>
+  @font-face {
+    font-family: "Font Awesome 6 Free";
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-solid-900.woff2") format("woff2");
+  }
+  </style>
+
 </head>
 <body>
 
