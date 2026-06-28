@@ -31,9 +31,12 @@ require_once 'includes/header.php';
    generator.jpg         : unsplash.com/photos/white-electric-power-generator-VuR4oHZ3ucc
    electrician-wiring.jpg: unsplash.com/photos/electrician-is-working-on-electrical-wiring-Z8kjh-BlSgM
 */
-$img_panel    = file_exists('assets/images/electrician-panel.jpg')  ? 'assets/images/electrician-panel.jpg'  : null;
-$img_gen      = file_exists('assets/images/generator.jpg')          ? 'assets/images/generator.jpg'          : null;
-$img_wiring   = file_exists('assets/images/electrician-wiring.jpg') ? 'assets/images/electrician-wiring.jpg' : null;
+$img_panel    = file_exists('assets/images/electrician-panel.webp')  ? 'assets/images/electrician-panel.webp'
+              : (file_exists('assets/images/electrician-panel.jpg')  ? 'assets/images/electrician-panel.jpg'  : null);
+$img_gen      = file_exists('assets/images/generator.webp')          ? 'assets/images/generator.webp'
+              : (file_exists('assets/images/generator.jpg')          ? 'assets/images/generator.jpg'          : null);
+$img_wiring   = file_exists('assets/images/electrician-wiring.webp') ? 'assets/images/electrician-wiring.webp'
+              : (file_exists('assets/images/electrician-wiring.jpg') ? 'assets/images/electrician-wiring.jpg' : null);
 ?>
 
 <!-- ================================================================
