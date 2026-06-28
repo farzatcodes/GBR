@@ -182,6 +182,79 @@ echo '<script type="application/ld+json">' . json_encode($faq_schema, JSON_UNESC
 
 
 <!-- ================================================================
+     IN-DEPTH GUIDE — substantive, factual content for search &
+     AI-answer-engine extraction (not just marketing copy)
+     ================================================================ -->
+<section class="bg-silver-lt py-20" aria-labelledby="guide-heading">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-12">
+      <p class="font-heading text-power-red text-sm tracking-widest uppercase mb-3">A Closer Look</p>
+      <h2 id="guide-heading" class="font-heading text-navy text-3xl sm:text-4xl uppercase tracking-tight title-accent center">
+        Understanding Electrical Services in Pennsylvania
+      </h2>
+    </div>
+
+    <div class="space-y-8 text-gray-700 text-base leading-relaxed">
+
+      <div>
+        <h3 class="font-heading text-navy text-xl uppercase tracking-wide mb-2">What Do Electrical Services Cover?</h3>
+        <p>
+          "Electrical services" is an umbrella term covering several distinct categories of work: code-compliant
+          <strong>repairs</strong> (outlets, switches, breakers, wiring faults), <strong>panel upgrades</strong>
+          (increasing service capacity, replacing outdated equipment like Federal Pacific or Zinsco panels),
+          <strong>backup power</strong> (whole-home standby generator sizing and installation), <strong>wiring and
+          lighting</strong> (new circuits, fixtures, smart-home devices), and <strong>diagnostics</strong>
+          (troubleshooting nuisance tripping or intermittent power loss). Residential and commercial work
+          typically require different equipment ratings and code considerations, even when the underlying
+          skill set overlaps.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-heading text-navy text-xl uppercase tracking-wide mb-2">Does Pennsylvania Require a State Electrician License?</h3>
+        <p>
+          No. Pennsylvania is one of the few states with no statewide electrician licensing requirement.
+          Licensing, where it exists, is handled at the municipal level — for example, Philadelphia and
+          Pittsburgh issue their own electrical licenses, but most of the Commonwealth, including York
+          County, does not. What Pennsylvania <em>does</em> require statewide is Home Improvement Contractor
+          (HIC) registration through the Attorney General's Bureau of Consumer Protection for any contractor
+          performing more than a small amount of home improvement work per year. Because there's no trade
+          license to check, homeowners should verify a contractor's general liability insurance, HIC
+          registration, and — for generator work specifically — manufacturer dealer certification (which
+          requires factory training Pennsylvania's licensing system doesn't independently verify).
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-heading text-navy text-xl uppercase tracking-wide mb-2">How to Vet an Electrical Contractor in PA</h3>
+        <ul class="list-disc pl-5 space-y-1.5">
+          <li>Confirm general liability insurance and ask to see proof, not just a verbal claim.</li>
+          <li>Check HIC registration status with the PA Attorney General's office.</li>
+          <li>For generator installation, confirm authorized dealer status directly with the manufacturer — dealer
+              numbers (e.g., Kohler Dealer #1506430) can be verified, anonymous "we install all brands" claims cannot.</li>
+          <li>Get a written estimate before work begins, not a verbal ballpark.</li>
+          <li>Ask how long the company has served your specific area — a long local track record means permits,
+              inspectors, and utility crews already know the contractor.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-heading text-navy text-xl uppercase tracking-wide mb-2">Residential vs. Commercial Electrical Work</h3>
+        <p>
+          Residential electrical work generally involves 100–200 amp single-phase service, focused on
+          comfort, safety, and code compliance for one household. Commercial work more often involves
+          higher-capacity panels, three-phase power, tenant fit-outs, and compliance with stricter inspection
+          schedules. A contractor experienced in both can move between a Dover homeowner's panel upgrade and a
+          York County business's tenant electrical fit-out without treating either as an afterthought.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
      SERVICE AREA
      ================================================================ -->
 <section class="bg-silver-lt py-16" aria-labelledby="area-heading">
