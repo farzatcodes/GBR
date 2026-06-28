@@ -63,9 +63,11 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.jpg') ? 'assets/im
         <!-- Large hero logo -->
         <div class="mb-8 lg:mb-10">
           <?php
-          $logo_src = file_exists('assets/images/logo.png')
-                    ? 'assets/images/logo.png'
-                    : 'assets/images/logo.svg';
+          $logo_src = file_exists('assets/images/logo.webp')
+                    ? 'assets/images/logo.webp'
+                    : (file_exists('assets/images/logo.png')
+                        ? 'assets/images/logo.png'
+                        : 'assets/images/logo.svg');
           ?>
           <img src="<?php echo htmlspecialchars($logo_src); ?>"
                alt="GBR Electrical Services, LLC"

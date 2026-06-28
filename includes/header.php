@@ -6,8 +6,8 @@
  *   $page_title        string  e.g. 'Contact Us'
  *   $meta_description  string  page-specific description
  *
- * Logo:  place the actual logo PNG at  assets/images/logo.png
- *        Falls back to  assets/images/logo.svg  automatically.
+ * Logo:  place the actual logo WebP at  assets/images/logo.webp
+ *        Falls back to  assets/images/logo.png, then logo.svg, automatically.
  *
  * ui-ux-pro-max applied:
  *   ✓ Skip-to-main link (accessibility priority 1)
@@ -22,10 +22,12 @@
 
 $current_page = basename($_SERVER['PHP_SELF']);
 
-/* Pick the correct logo source (PNG preferred over SVG fallback) */
-$logo_src = file_exists(__DIR__ . '/../assets/images/logo.png')
-          ? 'assets/images/logo.png'
-          : 'assets/images/logo.svg';
+/* Pick the correct logo source (WebP preferred, then PNG, then SVG fallback) */
+$logo_src = file_exists(__DIR__ . '/../assets/images/logo.webp')
+          ? 'assets/images/logo.webp'
+          : (file_exists(__DIR__ . '/../assets/images/logo.png')
+              ? 'assets/images/logo.png'
+              : 'assets/images/logo.svg');
 
 $default_desc = 'GBR Electrical Services LLC – Licensed electrical contractor '
               . 'and certified Kohler home generator installer serving Dover, PA '

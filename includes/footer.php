@@ -5,9 +5,11 @@
 </main><!-- /main#main-content -->
 
 <?php
-$logo_src = file_exists(__DIR__ . '/../assets/images/logo.png')
-          ? 'assets/images/logo.png'
-          : 'assets/images/logo.svg';
+$logo_src = file_exists(__DIR__ . '/../assets/images/logo.webp')
+          ? 'assets/images/logo.webp'
+          : (file_exists(__DIR__ . '/../assets/images/logo.png')
+              ? 'assets/images/logo.png'
+              : 'assets/images/logo.svg');
 ?>
 
 <footer class="bg-navy text-silver" aria-label="Site footer">
