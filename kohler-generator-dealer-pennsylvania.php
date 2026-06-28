@@ -1,5 +1,5 @@
 <?php
-$page_title       = 'Kohler Generator Dealer in PA | Authorized Dealer #1506430 — GBR Electrical';
+$page_title       = 'Kohler Generator Dealer in PA — Authorized Dealer #1506430';
 $meta_description = 'Looking for an authorized Kohler generator dealer in PA? GBR Electrical Services, LLC (Dealer #1506430) provides factory-trained sales, installation, and service for Kohler standby generators across Central Pennsylvania.';
 $canonical        = 'https://lightsonpa.com/kohler-generator-dealer-pennsylvania.php';
 $og_type          = 'article';

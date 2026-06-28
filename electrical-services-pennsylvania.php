@@ -3,7 +3,7 @@
  * GBR Electrical Services, LLC — Electrical Services in Pennsylvania (resource hub)
  */
 
-$page_title       = 'Electrical Services in Pennsylvania | GBR Electrical Services, LLC';
+$page_title       = 'Electrical Services in Pennsylvania';
 $meta_description = 'A complete guide to electrical services in Pennsylvania from GBR Electrical Services, LLC — licensed electrician and authorized Kohler dealer serving Dover, PA, York County, and Central Pennsylvania.';
 $canonical        = 'https://lightsonpa.com/electrical-services-pennsylvania.php';
 $breadcrumbs      = [
