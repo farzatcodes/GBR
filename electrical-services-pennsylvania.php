@@ -60,6 +60,11 @@ $area_links = [
 
 $resource_links = [
   [
+    'href' => 'panel-upgrade-older-homes-pa.php',
+    'cat'  => 'Panel Upgrades',
+    'h2'   => 'Electrical Panel Upgrades for Older Homes in PA — Warning Signs & Insurance',
+  ],
+  [
     'href' => 'ev-charger-installation-pennsylvania.php',
     'cat'  => 'EV Charger Installation',
     'h2'   => 'EV Charger Installation in PA — Panel Capacity, Permits & Wiring',

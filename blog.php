@@ -10,6 +10,15 @@ require_once 'includes/header.php';
 
 $articles = [
   [
+    'href'    => 'panel-upgrade-older-homes-pa.php',
+    'date'    => 'June 28, 2026',
+    'cat'     => 'Panel Upgrades',
+    'h1'      => 'Electrical Panel Upgrades for Older Homes in PA — Warning Signs & Insurance',
+    'excerpt' => 'Federal Pacific or Zinsco panel? Knob-and-tube wiring? GBR Electrical explains the warning signs of an outdated panel, why insurers flag certain brands, and what an upgrade involves.',
+    'read'    => '8 min read',
+    'icon'    => 'fas fa-solar-panel',
+  ],
+  [
     'href'    => 'ev-charger-installation-pennsylvania.php',
     'date'    => 'June 28, 2026',
     'cat'     => 'EV Charger Installation',
