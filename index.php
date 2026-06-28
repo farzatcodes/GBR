@@ -361,6 +361,10 @@ $img_wiring   = file_exists('assets/images/electrician-wiring.webp') ? 'assets/i
         <?php if ($img_panel): ?>
         <div class="relative overflow-hidden rounded-xl">
           <img src="<?php echo $img_panel; ?>"
+               <?php if ($img_panel === 'assets/images/electrician-panel.webp' && file_exists('assets/images/electrician-panel-600w.webp')): ?>
+               srcset="assets/images/electrician-panel-600w.webp 600w, assets/images/electrician-panel.webp 1200w"
+               sizes="(min-width: 1024px) 600px, 100vw"
+               <?php endif; ?>
                alt="GBR Electrical Services — licensed electrician at work on an electrical panel"
                class="w-full h-64 object-cover"
                loading="lazy" width="600" height="256">
