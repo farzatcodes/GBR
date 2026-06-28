@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 170" width="420" height="170" role="img" aria-label="GBR Electrical Services LLC">
+  <title>GBR Electrical Services, LLC</title>
+  <defs>
+    <!-- Deep red gradient for 3-D emboss -->
+    <linearGradient id="rg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#FF2C2C"/>
+      <stop offset="42%"  stop-color="#C41118"/>
+      <stop offset="100%" stop-color="#7A0009"/>
+    </linearGradient>
+    <!-- Glass-highlight overlay -->
+    <linearGradient id="hl" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="rgba(255,255,255,0.32)"/>
+      <stop offset="55%"  stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+    <filter id="ds" x="-5%" y="-5%" width="115%" height="120%">
+      <feDropShadow dx="3" dy="5" stdDeviation="4" flood-color="#5a0008" flood-opacity="0.5"/>
+    </filter>
+    <clipPath id="clip-b">
+      <text x="212" y="124" font-family="Impact,'Arial Black',sans-serif"
+            font-size="130" font-weight="900" text-anchor="middle">B</text>
+    </clipPath>
+  </defs>
+
+  <!-- White canvas -->
+  <rect width="420" height="170" fill="#ffffff"/>
+
+  <!-- ── GBR lettering: base fill ── -->
+  <text x="210" y="124"
+        font-family="Impact,'Arial Black',sans-serif"
+        font-size="130" font-weight="900"
+        fill="url(#rg)" text-anchor="middle"
+        letter-spacing="-4" filter="url(#ds)">GBR</text>
+
+  <!-- ── GBR lettering: gloss highlight ── -->
+  <text x="210" y="124"
+        font-family="Impact,'Arial Black',sans-serif"
+        font-size="130" font-weight="900"
+        fill="url(#hl)" text-anchor="middle"
+        letter-spacing="-4">GBR</text>
+
+  <!-- ── American-flag lightning bolt (clipped to the B) ── -->
+  <g clip-path="url(#clip-b)">
+    <!-- Flag background (navy canton) -->
+    <rect x="170" y="5" width="84" height="90" rx="2" fill="#002868"/>
+    <!-- Red + white stripes -->
+    <rect x="170" y="5"  width="84" height="13" fill="#BF0A30"/>
+    <rect x="170" y="31" width="84" height="13" fill="#BF0A30"/>
+    <rect x="170" y="57" width="84" height="13" fill="#BF0A30"/>
+    <rect x="170" y="82" width="84" height="13" fill="#BF0A30"/>
+    <!-- Canton stars (simplified) -->
+    <rect x="170" y="5"  width="34" height="52" fill="#002868"/>
+    <text x="187" y="23" font-size="9" fill="white" text-anchor="middle" font-family="serif">★ ★ ★</text>
+    <text x="187" y="36" font-size="9" fill="white" text-anchor="middle" font-family="serif">★ ★ ★</text>
+    <text x="187" y="49" font-size="9" fill="white" text-anchor="middle" font-family="serif">★ ★ ★</text>
+    <!-- Lightning bolt over the flag (white silhouette) -->
+    <polygon points="216,4  200,55 213,55 195,100 230,50 216,50"
+             fill="white" opacity="0.92"/>
+  </g>
+
+  <!-- ── ELECTRICAL SERVICES, LLC sub-text ── -->
+  <text x="210" y="158"
+        font-family="'Arial','Helvetica Neue',sans-serif"
+        font-size="15" font-weight="400"
+        fill="#AAAAAA" text-anchor="middle"
+        letter-spacing="5.5">ELECTRICAL SERVICES, LLC</text>
+</svg>

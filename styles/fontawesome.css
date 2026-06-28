@@ -1,0 +1,56 @@
+/*!
+ * Font Awesome Free 6.5.1 — pruned subset (solid icons actually used on this site)
+ * Source: Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:900;font-display:optional;src:url(./webfonts/fa-solid-900.woff2) format("woff2")}
+.fa,.fas{font-family:var(--fa-style-family,"Font Awesome 6 Free");font-weight:var(--fa-style,900)}
+.fa,.fas{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:var(--fa-display,inline-block);font-style:normal;font-variant:normal;line-height:1;text-rendering:auto}
+.fa-arrow-right:before{content:"\f061"}
+.fa-award:before{content:"\f559"}
+.fa-bolt:before{content:"\f0e7"}
+.fa-book-open:before{content:"\f518"}
+.fa-building:before{content:"\f1ad"}
+.fa-calendar:before{content:"\f133"}
+.fa-calendar-check:before{content:"\f274"}
+.fa-certificate:before{content:"\f0a3"}
+.fa-check:before{content:"\f00c"}
+.fa-check-circle:before,.fa-circle-check:before{content:"\f058"}
+.fa-chevron-down:before{content:"\f078"}
+.fa-chevron-right:before{content:"\f054"}
+.fa-circle-exclamation:before{content:"\f06a"}
+.fa-clipboard-check:before{content:"\f46c"}
+.fa-clipboard-list:before{content:"\f46d"}
+.fa-clock:before{content:"\f017"}
+.fa-crown:before{content:"\f521"}
+.fa-directions:before{content:"\f5eb"}
+.fa-envelope:before{content:"\f0e0"}
+.fa-gauge-high:before{content:"\f625"}
+.fa-globe:before{content:"\f0ac"}
+.fa-house-chimney:before{content:"\e3af"}
+.fa-lightbulb:before{content:"\f0eb"}
+.fa-list-check:before{content:"\f0ae"}
+.fa-location-dot:before,.fa-map-marker-alt:before{content:"\f3c5"}
+.fa-magnifying-glass-chart:before{content:"\e522"}
+.fa-map-location-dot:before{content:"\f5a0"}
+.fa-medal:before{content:"\f5a2"}
+.fa-mobile-alt:before{content:"\f3cd"}
+.fa-oil-can:before{content:"\f613"}
+.fa-paper-plane:before{content:"\f1d8"}
+.fa-phone:before{content:"\f095"}
+.fa-plug-circle-bolt:before{content:"\e55b"}
+.fa-quote-left:before{content:"\f10d"}
+.fa-rotate:before{content:"\f2f1"}
+.fa-screwdriver-wrench:before{content:"\f7d9"}
+.fa-shield:before{content:"\f132"}
+.fa-shield-halved:before{content:"\f3ed"}
+.fa-solar-panel:before{content:"\f5ba"}
+.fa-spinner:before{content:"\f110"}
+.fa-star:before{content:"\f005"}
+.fa-tag:before{content:"\f02b"}
+.fa-triangle-exclamation:before{content:"\f071"}
+.fa-user:before{content:"\f007"}
+.fa-user-gear:before{content:"\f4fe"}
+.fa-wrench:before{content:"\f0ad"}
+@keyframes fa-spin{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}
+.fa-spin{animation-name:fa-spin;animation-delay:var(--fa-animation-delay,0s);animation-direction:var(--fa-animation-direction,normal);animation-duration:var(--fa-animation-duration,2s);animation-iteration-count:var(--fa-animation-iteration-count,infinite);animation-timing-function:var(--fa-animation-timing,linear)}

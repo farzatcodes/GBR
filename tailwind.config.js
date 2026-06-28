@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './*.php',
-    './includes/*.php',
+    './app/**/*.{js,jsx}',
+    './components/**/*.{js,jsx}',
   ],
   theme: {
     extend: {
@@ -20,8 +20,8 @@ module.exports = {
         'silver-lt':    '#f0f2f5',
       },
       fontFamily: {
-        'heading': ['Barlow Condensed', 'Impact', 'Arial Narrow', 'sans-serif'],
-        'body':    ['Inter', 'system-ui', 'sans-serif'],
+        'heading': ['var(--font-heading)', 'Impact', 'Arial Narrow', 'sans-serif'],
+        'body':    ['var(--font-body)', 'system-ui', 'sans-serif'],
       },
       minHeight: { '11': '2.75rem', '12': '3rem', '13': '3.25rem' },
       height:    { '11': '2.75rem', '12': '3rem', '13': '3.25rem', '18': '4.5rem' },
