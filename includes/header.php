@@ -95,7 +95,7 @@ $default_desc = 'GBR Electrical Services LLC – Licensed electrical contractor 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": ["ElectricalContractor","LocalBusiness"],
+    "@type": ["Electrician","LocalBusiness"],
     "name": "GBR Electrical Services, LLC",
     "image": "<?php echo $site_url; ?>/assets/images/logo.png",
     "logo": "<?php echo $site_url; ?>/assets/images/logo.png",
