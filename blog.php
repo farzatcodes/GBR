@@ -2,6 +2,10 @@
 $page_title       = 'Electrical & Generator Articles for York County Homeowners';
 $meta_description = 'Expert articles from GBR Electrical Services, LLC — licensed electrician and Kohler generator dealer in Dover, PA. Tips on generators, outage prep, and electrical safety for York County families.';
 $canonical        = 'https://lightsonpa.com/blog.php';
+$breadcrumbs      = [
+  ['name' => 'Home',     'url' => 'index.php'],
+  ['name' => 'Articles'],
+];
 require_once 'includes/header.php';
 
 $articles = [

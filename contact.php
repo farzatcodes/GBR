@@ -23,6 +23,11 @@ $flash_status  = isset($_GET['status'])  ? $_GET['status']           : '';
 $flash_message = isset($_GET['message']) ? urldecode($_GET['message']): '';
 $preselect     = isset($_GET['service']) ? htmlspecialchars($_GET['service']) : '';
 
+$breadcrumbs = [
+  ['name' => 'Home',    'url' => 'index.php'],
+  ['name' => 'Contact'],
+];
+
 require_once 'includes/header.php';
 ?>
 

@@ -4,6 +4,11 @@ $meta_description = 'GBR Electrical in Dover, PA recommends Kohler generators fo
 $canonical        = 'https://lightsonpa.com/kohler-generators-york-county-pa.php';
 $og_type          = 'article';
 $article_date     = '2026-06-14';
+$breadcrumbs      = [
+  ['name' => 'Home',               'url' => 'index.php'],
+  ['name' => 'Articles',           'url' => 'blog.php'],
+  ['name' => 'Kohler Generators'],
+];
 
 require_once 'includes/header.php';
 

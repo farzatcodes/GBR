@@ -4,6 +4,11 @@ $meta_description = 'Looking for an authorized Kohler generator dealer in PA? GB
 $canonical        = 'https://lightsonpa.com/kohler-generator-dealer-pennsylvania.php';
 $og_type          = 'article';
 $article_date     = '2026-06-16';
+$breadcrumbs      = [
+  ['name' => 'Home',                'url' => 'index.php'],
+  ['name' => 'Articles',            'url' => 'blog.php'],
+  ['name' => 'Kohler Dealer in PA'],
+];
 
 require_once 'includes/header.php';
 

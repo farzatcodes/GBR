@@ -6,6 +6,11 @@
 $page_title       = 'Whole House Generator Maintenance Program — Plans & Pricing';
 $meta_description = 'GBR Electrical\'s Whole House Generator Maintenance Program keeps your Kohler standby generator ready year-round. Compare Essential, Advanced, and Premium Care plans for Dover, PA and York County homes.';
 $canonical        = 'https://lightsonpa.com/generator-maintenance-plans.php';
+$breadcrumbs      = [
+  ['name' => 'Home',       'url' => 'index.php'],
+  ['name' => 'Generators', 'url' => 'index.php#generators'],
+  ['name' => 'Maintenance Plans'],
+];
 
 require_once 'includes/header.php';
 

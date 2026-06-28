@@ -4,6 +4,11 @@ $meta_description = 'Power outages in Dover and York County, PA are becoming mor
 $canonical        = 'https://lightsonpa.com/power-outages-dover-pa-generators.php';
 $og_type          = 'article';
 $article_date     = '2026-06-14';
+$breadcrumbs      = [
+  ['name' => 'Home',                  'url' => 'index.php'],
+  ['name' => 'Articles',              'url' => 'blog.php'],
+  ['name' => 'Power Outages Dover PA'],
+];
 
 require_once 'includes/header.php';
 

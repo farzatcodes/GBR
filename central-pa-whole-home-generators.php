@@ -4,6 +4,11 @@ $meta_description = 'Central Pennsylvania homeowners are choosing whole-home gen
 $canonical        = 'https://lightsonpa.com/central-pa-whole-home-generators.php';
 $og_type          = 'article';
 $article_date     = '2026-06-14';
+$breadcrumbs      = [
+  ['name' => 'Home',                  'url' => 'index.php'],
+  ['name' => 'Articles',              'url' => 'blog.php'],
+  ['name' => 'Whole-Home Generators'],
+];
 
 require_once 'includes/header.php';
 

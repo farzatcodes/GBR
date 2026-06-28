@@ -148,6 +148,26 @@ $default_desc = 'GBR Electrical Services LLC – Licensed electrical contractor 
   }
   </script>
 
+  <?php if (isset($breadcrumbs) && is_array($breadcrumbs) && count($breadcrumbs) > 1): ?>
+  <!-- BreadcrumbList schema — mirrors the visible breadcrumb nav on this page -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      <?php foreach ($breadcrumbs as $i => $b): ?>
+      {
+        "@type": "ListItem",
+        "position": <?php echo $i + 1; ?>,
+        "name": "<?php echo htmlspecialchars($b['name'], ENT_QUOTES); ?>"<?php if (!empty($b['url'])): ?>,
+        "item": "<?php echo htmlspecialchars($site_url . '/' . $b['url'], ENT_QUOTES); ?>"<?php endif; ?>
+      }<?php echo $i < count($breadcrumbs) - 1 ? ',' : ''; ?>
+      <?php endforeach; ?>
+    ]
+  }
+  </script>
+  <?php endif; ?>
+
   <!-- Tailwind CSS — locally built & minified (see package.json build:css) -->
   <link rel="stylesheet" href="assets/css/tailwind.css">
 
