@@ -160,7 +160,7 @@ export default function HomePage() {
 
             <div className="lg:col-span-3">
               <div className="mb-8 lg:mb-10">
-                <img src="/assets/images/logo.svg" alt="GBR Electrical Services, LLC" className="h-20 sm:h-24 w-auto object-contain" width="360" height="96" loading="eager" />
+                <img src="/assets/images/logo.webp" alt="GBR Electrical Services, LLC" className="h-20 sm:h-24 w-auto object-contain" width="360" height="96" loading="eager" />
               </div>
 
               <div className="inline-flex items-center gap-2.5 bg-power-red/15 border border-power-red/35 px-4 py-2 rounded-lg mb-5">
