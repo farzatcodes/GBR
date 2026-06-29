@@ -13,6 +13,3 @@ spam_log.txt
 
 # Node deps for the Tailwind CSS build (run `npm run build:css` to regenerate)
 node_modules/
-
-# Next.js build output
-.next/
