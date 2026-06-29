@@ -65,7 +65,7 @@ export default function Header() {
           <nav className="flex items-center justify-between py-3" aria-label="Main navigation">
             <a href="/index.php" className="flex-shrink-0 cursor-pointer" aria-label="GBR Electrical Services, LLC — home page">
               <img
-                src="/assets/images/logo.svg"
+                src="/assets/images/logo.webp"
                 alt="GBR Electrical Services, LLC"
                 className="h-11 sm:h-12 w-auto object-contain"
                 width="240" height="48"
